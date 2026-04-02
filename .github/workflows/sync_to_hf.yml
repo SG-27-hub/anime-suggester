@@ -12,13 +12,8 @@ jobs:
         with:
           fetch-depth: 0
           
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-          
       - name: Install Hugging Face CLI
-        run: pip install -U "huggingface_hub[cli]"
+        run: pipx install "huggingface_hub[cli]"
         
       - name: Upload to Hub
         env:
