@@ -17,9 +17,24 @@ jobs:
         with:
           python-version: '3.10'
           
-      - name: Install and Upload
+      - name: Install Hugging Face Library
+        run: pip install huggingface_hub
+        
+      - name: Upload using Python
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          pip install -U "huggingface_hub[cli]"
-          huggingface-cli upload SG-27/anime-suggester . . --repo-type space --token $HF_TOKEN
+          cat << 'EOF' > upload.py
+          import os
+          from huggingface_hub import HfApi
+          
+          api = HfApi()
+          api.upload_folder(
+              folder_path=".",
+              repo_id="SG-27/anime-suggester",
+              repo_type="space",
+              token=os.environ.get("HF_TOKEN"),
+              ignore_patterns=[".git/*", ".github/*"]
+          )
+          EOF
+          python upload.py
