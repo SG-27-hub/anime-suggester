@@ -7,11 +7,15 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          lfs: true
-      - name: Push to hub
+          
+      - name: Install Hugging Face CLI
+        run: pip install -U "huggingface_hub[cli]"
+        
+      - name: Upload to Hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://SG-27:$HF_TOKEN@huggingface.co/spaces/SG-27/anime-suggester main
+        run: huggingface-cli upload SG-27/anime-suggester . . --repo-type space --token $HF_TOKEN
