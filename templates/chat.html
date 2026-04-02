@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Anime Chat</title>
+    <link rel="icon" type="image/png" href="/static/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            margin: 0; background-color: #121212; color: #e0e0e0; font-family: sans-serif;
+            display: flex; height: 100vh; overflow: hidden;
+        }
+        /* Sidebar for Prompt History */
+        .sidebar {
+            width: 260px; background-color: #0b0e14; border-right: 1px solid rgba(0, 229, 255, 0.2);
+            display: flex; flex-direction: column; padding: 20px 10px; box-sizing: border-box;
+        }
+        .sidebar h3 { color: #00e5ff; font-size: 16px; margin-top: 0; margin-bottom: 20px; padding-left: 10px; }
+        .history-list { list-style: none; padding: 0; margin: 0; overflow-y: auto; flex-grow: 1; }
+        .history-item {
+            padding: 12px; background: rgba(255,255,255,0.05); margin-bottom: 8px; border-radius: 8px;
+            font-size: 14px; cursor: pointer; transition: 0.2s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .history-item:hover { background: rgba(0, 229, 255, 0.1); color: #00e5ff; }
+        .back-btn {
+            background: transparent; border: 1px solid #00e5ff; color: #00e5ff; padding: 10px;
+            border-radius: 8px; cursor: pointer; text-align: center; text-decoration: none; margin-top: 10px;
+        }
+        .back-btn:hover { background: rgba(0, 229, 255, 0.1); }
+
+        /* Main Chat Area */
+        .chat-container { flex-grow: 1; display: flex; flex-direction: column; position: relative; }
+        .chat-log { flex-grow: 1; overflow-y: auto; padding: 40px; padding-bottom: 120px; display: flex; flex-direction: column; gap: 20px; }
+        
+        /* Chat Bubbles */
+        .message { max-width: 80%; padding: 15px 20px; border-radius: 20px; line-height: 1.5; }
+        .user-message { background-color: rgba(255, 255, 255, 0.1); align-self: flex-end; border-bottom-right-radius: 5px; }
+        .ai-message { background-color: rgba(0, 229, 255, 0.05); border: 1px solid rgba(0, 229, 255, 0.2); align-self: flex-start; border-bottom-left-radius: 5px; }
+        
+        /* Anime Recommendation Card inside Chat */
+        .anime-card { display: flex; gap: 15px; margin-top: 10px; align-items: flex-start; }
+        .anime-card img { width: 100px; border-radius: 10px; }
+        .anime-info h4 { margin: 0 0 5px 0; color: #00e5ff; }
+        .anime-info p { margin: 0; font-size: 14px; color: #ccc; }
+
+        /* Input Area */
+        .input-area {
+            position: absolute; bottom: 0; left: 0; right: 0; padding: 30px;
+            background: linear-gradient(transparent, #121212 40%); display: flex; justify-content: center;
+        }
+        .input-box {
+            width: 100%; max-width: 700px; display: flex; background: #1e1e1e;
+            border: 1px solid rgba(255,255,255,0.2); border-radius: 30px; padding: 5px 15px; align-items: center;
+        }
+        .input-box input {
+            flex-grow: 1; background: transparent; border: none; color: white;
+            padding: 15px; font-size: 16px; outline: none;
+        }
+        .input-box button {
+            background: #00e5ff; border: none; width: 40px; height: 40px; border-radius: 50%;
+            color: black; font-size: 18px; cursor: pointer; transition: 0.2s; display: flex; justify-content: center; align-items: center;
+        }
+        .input-box button:hover { transform: scale(1.1); box-shadow: 0 0 15px rgba(0, 229, 255, 0.5); }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h3><i class="bi bi-clock-history"></i> Recent Prompts</h3>
+        <ul class="history-list" id="promptHistory">
+            </ul>
+        <a href="/?skip_splash=1" class="back-btn"><i class="bi bi-house"></i> Back to Main Site</a>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-log" id="chatLog">
+            <div class="message ai-message">
+                Hello! I am the Romance Anime AI. Describe the kind of romance you want to watch (e.g., "a relaxing school show where they get together fast").
+            </div>
+        </div>
+
+        <div class="input-area" style="flex-direction: column; align-items: center; padding-bottom: 15px;">
+            <div class="input-box" style="margin-bottom: 10px;">
+                <input type="text" id="promptInput" placeholder="Describe your perfect anime..." autocomplete="off">
+                <button onclick="sendPrompt()"><i class="bi bi-arrow-up"></i></button>
+            </div>
+            <div style="color: #666; font-size: 12px; text-align: center; font-style: italic;">
+                Note: This chat AI is a work in progress. Please keep prompts simple, as it may not understand complex requests like advanced models do.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const chatLog = document.getElementById('chatLog');
+        const promptInput = document.getElementById('promptInput');
+        const historyList = document.getElementById('promptHistory');
+
+        // Load history from local storage when page opens
+        let prompts = JSON.parse(localStorage.getItem('aiPromptHistory')) || [];
+        renderHistory();
+
+        // Allow pressing Enter to send
+        promptInput.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                sendPrompt();
+            }
+        });
+
+        async function sendPrompt() {
+            const text = promptInput.value.trim();
+            if (!text) return;
+
+            // 1. Add User Message to screen
+            addMessage(text, 'user-message');
+            promptInput.value = '';
+
+            // 2. Save to History (Limit to 5)
+            prompts.unshift(text);
+            if (prompts.length > 5) prompts = prompts.slice(0, 5);
+            localStorage.setItem('aiPromptHistory', JSON.stringify(prompts));
+            renderHistory();
+
+            // 3. Show a "thinking" message
+            const thinkingId = 'thinking-' + Date.now();
+            addMessage("Thinking...", 'ai-message', thinkingId);
+
+            // 4. Send to Python Backend
+            try {
+                const response = await fetch('/api/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: text })
+                });
+                
+                const anime = await response.json();
+                
+                // 5. Replace thinking message with the Chat Text and Anime Card
+                const thinkingBubble = document.getElementById(thinkingId);
+                thinkingBubble.innerHTML = `
+                    <div style="margin-bottom: 12px; line-height: 1.4;">${anime.ai_message}</div>
+                    <div class="anime-card">
+                        <img src="${anime.img}" alt="poster">
+                        <div class="anime-info">
+                            <h4>${anime.title}</h4>
+                            <p><strong>Genres:</strong> ${anime.genre.join(', ')}</p>
+                            <p style="margin-top: 8px;">${anime.desc}</p>
+                            <a href="/suggest?search=${encodeURIComponent(anime.title)}" style="color: #00e5ff; text-decoration: none; font-size: 12px; margin-top: 10px; display: inline-block;">View Full Details &raquo;</a>
+                        </div>
+                    </div>
+                `;
+                chatLog.scrollTop = chatLog.scrollHeight; // Scroll to bottom
+            } catch (error) {
+                document.getElementById(thinkingId).innerText = "Sorry, I lost connection to the server.";
+            }
+        }
+
+        function addMessage(text, className, id = '') {
+            const div = document.createElement('div');
+            div.className = `message ${className}`;
+            div.innerText = text;
+            if (id) div.id = id;
+            chatLog.appendChild(div);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
+        function renderHistory() {
+            historyList.innerHTML = '';
+            prompts.forEach(p => {
+                const li = document.createElement('li');
+                li.className = 'history-item';
+                li.innerText = p;
+                li.onclick = () => { promptInput.value = p; }; // Clicking an old prompt fills the box
+                historyList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
