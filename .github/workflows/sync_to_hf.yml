@@ -1,9 +1,8 @@
-name: Sync to Hugging Face hub
+name: Sync to Hugging Face Hub
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
@@ -15,4 +14,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://SG-27-hub:$HF_TOKEN@huggingface.co/spaces/SG-27/anime-suggester main
+        run: git push --force https://SG-27:$HF_TOKEN@huggingface.co/spaces/SG-27/anime-suggester main
