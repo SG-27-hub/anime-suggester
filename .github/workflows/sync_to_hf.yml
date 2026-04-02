@@ -12,10 +12,14 @@ jobs:
         with:
           fetch-depth: 0
           
-      - name: Install Hugging Face CLI
-        run: pipx install "huggingface_hub[cli]"
-        
-      - name: Upload to Hub
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install and Upload
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: huggingface-cli upload SG-27/anime-suggester . . --repo-type space --token $HF_TOKEN
+        run: |
+          pip install -U "huggingface_hub[cli]"
+          huggingface-cli upload SG-27/anime-suggester . . --repo-type space --token $HF_TOKEN
