@@ -150,6 +150,461 @@ button.nav-btn:hover { transform: translateY(-3px); }
 .sakura { position: fixed; top: -20px; color: #ffb7c5; font-size: 20px; animation: fall linear infinite; pointer-events: none; z-index: 5; }
 @keyframes fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
 
+/* --- Mobile Blocker CSS --- */
+#mobile-blocker {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background: radial-gradient(circle at center, #2b1e38 0%, #121212 100%);
+    color: white;
+    z-index: 99999;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#mobile-blocker h2 { color: #00e5ff; text-shadow: 0 0 10px #00e5ff; margin-bottom: 15px; }
+#mobile-blocker p { color: #cccccc; font-size: 18px; line-height: 1.5; max-width: 400px; }
+
+@media (max-width: 768px) {
+    #mobile-blocker {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .sidebar, .main-content-wrapper, #splash-screen, .sakura {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body { height: auto; min-height: 100vh; }
+    .sidebar { width: 50px; left: 10px; top: 10px; bottom: 10px; }
+    .main-content-wrapper { margin-left: 70px; width: calc(100% - 70px); padding: 20px 10px; box-sizing: border-box; display: flex; align-items: center; justify-content: flex-start; margin-top: 20px; }
+    .kebab-icon { font-size: 22px; }
+    .dropdown-content { left: 60px; }
+    
+    /* Specific fixes for the Anime Recommendation Card */
+    h1.page-title { font-size: 24px; }
+    .card { padding: 25px 20px; gap: 20px; text-align: center; justify-content: center; border-radius: 30px; width: 100%; max-width: 100%; box-sizing: border-box; margin: 0 auto; }
+    .card-right { flex: 1; min-width: 100%; text-align: center; }
+    .btn-container { justify-content: center; } h2 { font-size: 24px; } .desc { font-size: 16px; }
+    .wiki-box { text-align: left; font-size: 14px; padding: 15px; } 
+    button.nav-btn { font-size: 14px; padding: 12px 20px; width: 100%; box-sizing: border-box; } 
+    .btn-container a { width: 100%; }
+}
+
+@media (max-width: 600px) {
+    h1, h2 { word-break: break-word; font-size: 22px !important; }
+    .shining-text { display: block !important; }
+    .card-left, .card-right { min-width: 100% !important; width: 100%; box-sizing: border-box; }
+    .hero-card, .card { width: 100%; padding: 20px 15px; box-sizing: border-box; margin: 0 auto; }
+    .main-content-wrapper { padding: 10px; overflow-x: hidden; }
+}
+</style>
+</head>
+<body>
+    <div id="mobile-blocker">
+        <img src="/static/logo.png" style="width: 80px; margin-bottom: 20px; animation: pulse 2s infinite; filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));">
+        <h2>Desktop Required</h2>
+        <p>This site is optimized for larger screens. Please switch to a laptop or desktop computer to view your recommendations.</p>
+    </div>
+
+    <div class="sidebar">
+        <div class="kebab-menu">
+            <div class="kebab-icon" onclick="toggleMenu()">&#8942;</div>
+            <div class="dropdown-content" id="myDropdown">
+                <a onclick="openModal('aboutModal')">About</a>
+                <a onclick="openModal('contactModal')">Contact</a>
+                <a onclick="openModal('disclaimerModal')">Disclaimer</a>
+            </div>
+        </div>
+
+        <div class="history-menu" style="display: flex; flex-direction: column; gap: 25px;">
+            <div class="history-icon" onclick="openHistoryModal()" title="Recent History">
+                <i class="bi bi-clock-history"></i>
+            </div>
+            <div class="history-icon" onclick="window.location.href='/chat'" title="AI Chat">
+                <i class="bi bi-robot"></i> 
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-wrapper">
+        <div id="historyModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('historyModal')">&times;</span>
+            <h2>Recent History</h2>
+            <ul id="historyList" style="list-style-type: none; padding: 0; margin-top: 20px;">
+                </ul>
+          </div>
+        </div>
+
+        <div id="aboutModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+            <h2>About This Site</h2>
+            <p>Welcome to the Romance Anime Suggester! This project was built as a fun, beginner-level project.</p>
+            <ul>
+              <li>Built entirely using Python and Flask.</li>
+              <li>Designed and tested on MX Linux Fluxbox.</li>
+              <li>Curated database focusing exclusively on happy endings.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="contactModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('contactModal')">&times;</span>
+            <h2>Contact the Developer</h2>
+            <p>Have an anime you think belongs on this list, or did you find a bug in the code?</p>
+            <ul>
+                <li>Email: uouoghim@gmail.com</li>
+                <li>GitHub: SG-27-hub</li>
+                <li>Discord: Currently not available</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="disclaimerModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('disclaimerModal')">&times;</span>
+            <h2>Image Disclaimer</h2>
+            <p>I do not own any of the images displayed on this page. If you are having an issue with an image, please contact me at: uouoghim@gmail.com</p>
+          </div>
+        </div>
+
+        <div id="watchModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('watchModal')">&times;</span>
+            <h2>Where to Watch Anime</h2>
+            <p>Here are the top platforms to stream anime :</p>
+            <h4>Crunchyroll</h4>
+            <ul>
+                <li class="pro">Pros: Largest anime library, episodes available right after Japan release.</li>
+                <li class="con">Cons: Requires a premium subscription for newer shows.</li>
+            </ul>
+            <h4>Netflix</h4>
+            <ul>
+                <li class="pro">Pros: Excellent video player, lots of high-quality dubs available.</li>
+                <li class="con">Cons: Smaller catalog, seasonal anime are often delayed.</li>
+            </ul>
+            <h4>Animepahe</h4>
+            <ul>
+                <li class="pro">Pros: All videos on the site are 100% free.</li>
+                <li class="pro">Pros: You have the option to either watch online or download.</li>
+                <li class="con">Cons: You might experience loading screens or buffering, even with a fast internet connection.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="downloadModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('downloadModal')">&times;</span>
+            <h2>How to Download Anime</h2>
+            <p>If you need to watch offline, here are the safest options:</p>
+            <h4>Official App Downloads (Crunchyroll/Netflix)</h4>
+            <ul>
+                <li class="pro">Pros: completely safe, high quality, supports the creators.</li>
+                <li class="con">Cons: Requires premium memberships. Downloads expire after a certain time.</li>
+            </ul>
+            <h4>Nyaa</h4>
+            <ul>
+                <li class="pro">Pros: Free high-quality translations.</li>
+                <li class="con">Cons: Requires a torrent client and relies on seeders.</li>
+            </ul>
+            <h4>Animepahe</h4>
+            <ul>
+                <li class="pro">Pros: Total freedom to choose and download your favorites.</li>
+                <li class="con">Cons: Downloads are restricted to a single episode at once.</li>
+            </ul>
+          </div>
+        </div>
+
+       <h1 class="page-title">
+           <img src="/static/logo.png" style="width: 35px;"> Your Recommendation <img src="/static/logo.png" style="width: 35px;">
+       </h1>
+
+        <div class="card">
+            <div class="card-left">
+                <div class="img-container">
+                    <img src="{{ anime.get('img', '') }}" alt="Anime Poster for {{ anime['title'] }}">
+                </div>
+                <div class="action-links">
+                    <button onclick="openModal('watchModal')" class="action-btn watch">&#9658; Where to Watch</button>
+                    <button onclick="openModal('downloadModal')" class="action-btn download">&#11167; Download Options</button>
+                </div>
+            </div>
+            
+            <div class="card-right">
+                <h2 id="animeTitle">{{ anime['title'] }}</h2>
+                <div class="genre">{{ anime['genre'] | join(' • ') | title }}</div>
+                
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;">
+                    <h3 style="margin: 0; color: #ff9800; background: rgba(255, 152, 0, 0.1); border: 1px solid rgba(255, 152, 0, 0.3); padding: 6px 15px; border-radius: 20px; font-size: 16px;">Rating: {{ anime['rating'] }}</h3>
+                    <span class="audio-badge {% if 'Eng' in anime.get('audio', '') %}eng{% else %}jap{% endif %}">
+                        {{ anime.get('audio', 'Jap Only') }}
+                    </span>
+                </div>
+                
+                <div class="desc">"{{ anime['desc'] }}"</div>
+                
+                <div class="wiki-box">
+                    <h4>Anime Wiki</h4>
+                    {{ anime.get('wiki', 'No additional info available.') | safe }}
+                </div>
+                
+                <div class="btn-container">
+                    <a href="/suggest?mood={{ mood }}" style="text-decoration: none; flex-grow: 1;"><button class="nav-btn again">Try Again</button></a>
+                    <a href="/?skip_splash=1" style="text-decoration: none; flex-grow: 1;"><button class="nav-btn home">Back Home</button></a>
+                </div>
+            </div>
+            <p class="desktop-warning">For the best experience, please view this site on a laptop or desktop.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() { 
+            document.getElementById("myDropdown").classList.toggle("show"); 
+        }
+
+       function openHistoryModal() {
+            document.getElementById("myDropdown").classList.remove("show"); // Close kebab
+            document.getElementById("historyModal").style.display = "block";
+            
+            const historyList = document.getElementById("historyList");
+            let history = JSON.parse(localStorage.getItem('animeHistory')) || [];
+            
+            // EXTRA SAFEGUARD: Force the array to a maximum of 6 items immediately
+            history = history.slice(0, 6);
+            
+            if (history.length === 0) {
+                historyList.innerHTML = '<li style="color: #888; text-align: center;">No history yet</li>';
+                return;
+            }
+
+            historyList.innerHTML = '';
+            history.forEach(item => {
+                let title = typeof item === 'string' ? item : item.title;
+                let time = typeof item === 'string' ? 'Prior to update' : item.time;
+                
+                historyList.innerHTML += `
+                    <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 229, 255, 0.2); padding: 12px 0;">
+                        <a href="/suggest?search=${encodeURIComponent(title)}" style="color: white; text-decoration: none; font-size: 16px; transition: 0.2s;" onmouseover="this.style.color='#00e5ff'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">${title}</a>
+                        <span style="color: #888; font-size: 13px; text-align: right; min-width: 120px;">${time}</span>
+                    </li>`;
+            });
+        }
+
+        function openModal(modalId) { document.getElementById("myDropdown").classList.remove("show"); document.getElementById(modalId).style.display = "block"; }
+        function closeModal(modalId) { document.getElementById(modalId).style.display = "none"; }
+        
+        window.onclick = function(event) {
+            if (!event.target.matches('.kebab-icon')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    dropdowns[i].classList.remove('show');
+                }
+            }
+            if (event.target.classList.contains('modal')) { event.target.style.display = "none"; }
+        }
+
+        // Save current anime with timestamp to history when page loads
+        window.addEventListener('load', () => {
+            const currentAnime = "{{ anime['title'] }}"; 
+            
+            if (currentAnime) {
+                let history = JSON.parse(localStorage.getItem('animeHistory')) || [];
+                
+                // Convert old string format to object format to prevent breaking existing data
+                history = history.map(item => typeof item === 'string' ? { title: item, time: 'Prior to update' } : item);
+                
+                // Remove the anime if it's already in the list
+                history = history.filter(item => item.title !== currentAnime);
+                
+                // Get current date and time
+                const now = new Date();
+                const timeString = now.toLocaleDateString() + ' ' + now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                
+                // Add the new anime to the top of the list as an object
+                history.unshift({ title: currentAnime, time: timeString });
+                
+                // Limit the list to exactly 6 items
+                if (history.length > 6) {
+                    history = history.slice(0, 6);
+                }
+                
+                localStorage.setItem('animeHistory', JSON.stringify(history));
+            }
+        });
+
+        function createSakura() {
+            const sakura = document.createElement('div');
+            sakura.classList.add('sakura');
+            sakura.innerHTML = '<img src="/static/logo.png" style="width: 35px;">'; 
+            sakura.style.left = Math.random() * 100 + 'vw';
+            sakura.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(sakura);
+            setTimeout(() => { sakura.remove(); }, 5000);
+        }
+        setInterval(createSakura, 600);
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="referrer" content="no-referrer">
+    
+    <title>Romance Anime Suggester</title>
+    <link rel="icon" type="image/png" href="/static/logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+/* Menu & Modal CSS */
+.kebab-menu { position: relative; display: flex; justify-content: center; width: 100%; }
+.kebab-icon { color: #00e5ff; font-size: 35px; cursor: pointer; user-select: none; text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); transition: 0.3s; line-height: 20px; display: flex; align-items: center; justify-content: center; height: 30px; }
+.kebab-icon:hover { transform: scale(1.1); text-shadow: 0 0 20px rgba(0, 229, 255, 0.9); }
+
+/* --- History Menu CSS --- */
+.history-menu { 
+    position: relative; 
+    display: flex; 
+    justify-content: center; 
+    width: 100%; 
+    margin-top: 35px; /* Space between kebab and clock */
+}
+.history-icon { 
+    color: #00e5ff; 
+    font-size: 24px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+.history-icon:hover { 
+    transform: scale(1.1); 
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.9); 
+}
+
+/* Dropdown pops out to the right of the sidebar */
+.dropdown-content { display: none; position: absolute; left: 45px; top: -10px; background-color: rgba(20, 20, 20, 0.95); backdrop-filter: blur(10px); min-width: 150px; box-shadow: 0 10px 25px rgba(0,0,0,0.8); border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 12px; overflow: hidden; text-align: left; z-index: 2000; }
+.dropdown-content.show { display: block; animation: fadeIn 0.3s ease-out; }
+.dropdown-content a { color: white; padding: 15px 20px; text-decoration: none; display: block; transition: 0.2s; font-size: 16px; cursor: pointer; }
+.dropdown-content a:hover { background-color: rgba(0, 229, 255, 0.2); color: #00e5ff; padding-left: 25px; }
+
+.modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(5px); overflow-y: auto; }
+.modal-content { background: rgba(20, 20, 20, 0.95); margin: 10% auto; padding: 30px; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 15px; width: 80%; max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); color: white; text-align: left; animation: fadeIn 0.3s ease-out; }
+.modal-content h2 { color: #00e5ff; margin-top: 0; border-bottom: 1px solid rgba(0, 229, 255, 0.2); padding-bottom: 10px; }
+.modal-content h4 { color: #ff9800; margin-bottom: 5px; font-size: 18px; }
+.modal-content ul { line-height: 1.8; color: #cccccc; margin-top: 0; padding-left: 20px; }
+.modal-content p { color: #cccccc; line-height: 1.6; }
+.close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.close:hover { color: #00e5ff; }
+.pro { color: #4CAF50; font-weight: bold; }
+.con { color: #f44336; font-weight: bold; }
+.desktop-warning { color: #ffb86c; font-size: 0.85rem; text-align: center; margin-top: 20px; font-style: italic; display: none; }
+@keyframes fadeIn { from {opacity: 0; transform: translateY(-10px);} to {opacity: 1; transform: translateY(0);} }
+
+@media (max-width: 768px) {
+    .sidebar { 
+        width: 50px; 
+        border-radius: 0 25px 25px 0; /* Half of 50px */
+    }
+}
+/* --- General Page Reset --- */
+body {
+    background: radial-gradient(circle at center, #2b1e38 0%, #121212 100%);
+    color: white; 
+    font-family: sans-serif; 
+    margin: 0; 
+    min-height: 100vh; 
+    overflow-x: hidden; 
+}
+
+/* --- Sidebar Styling (Crystal Glass Effect) --- */
+.sidebar {
+    width: 70px; 
+    
+    /* 1. The Crystal Background */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 229, 255, 0.02)); 
+    
+    /* 2. The Heavy Blur */
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 30px 0;
+    box-sizing: border-box; 
+    
+    /* 3. The Glass Edges (Light reflecting on top/left) */
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(0, 229, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 50px; 
+    
+    /* 4. Deep outer shadow + subtle inner shine */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05); 
+    
+    z-index: 1000; 
+}
+
+/* --- Main Content Area --- */
+.main-content-wrapper {
+    margin-left: 110px; /* 70px width + 20px left gap + 20px spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    width: calc(100% - 110px);
+}
+
+/* Recommendation Page Specific CSS */
+.audio-badge { padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+.audio-badge.eng { background: rgba(76, 175, 80, 0.1); border: 1px solid #4CAF50; color: #4CAF50; box-shadow: 0 0 10px rgba(76, 175, 80, 0.2); }
+.audio-badge.jap { background: rgba(0, 229, 255, 0.1); border: 1px solid #00e5ff; color: #00e5ff; box-shadow: 0 0 10px rgba(0, 229, 255, 0.2); }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+h1.page-title { color: #00e5ff; text-shadow: 0 0 10px #00e5ff, 0 0 20px rgba(0, 229, 255, 0.5); margin-bottom: 30px; margin-top: 0; font-size: 35px; position: relative; z-index: 10; padding: 0 20px; display: flex; align-items: center; justify-content: center; gap: 15px; }
+.card { background: rgba(15, 20, 30, 0.7); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); border: 1px solid rgba(0, 229, 255, 0.2); padding: 40px; border-radius: 40px; /* Increased curve */ box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.05); max-width: 850px; width: 90%; box-sizing: border-box; animation: fadeInUp 0.6s ease-out; position: relative; z-index: 10; display: flex; flex-wrap: wrap; gap: 30px; text-align: left; }
+.card-left { flex: 1; min-width: 250px; display: flex; flex-direction: column; align-items: center; }
+.card-right { flex: 2; min-width: 300px; }
+.img-container { overflow: hidden; border-radius: 25px; /* Smoother curve for image */ margin-bottom: 25px; box-shadow: 0px 10px 25px rgba(0,0,0,0.8), 0 0 15px rgba(0, 229, 255, 0.4); background: #1a1a1a; width: 100%; max-width: 250px; }
+img { width: 100%; display: block; transition: transform 0.4s ease; }
+.img-container:hover img { transform: scale(1.08); }
+.action-links { width: 100%; max-width: 250px; }
+.action-btn { display: block; width: 100%; box-sizing: border-box; margin-bottom: 15px; padding: 14px; background: linear-gradient(90deg, rgba(0, 229, 255, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%); border: 1px solid rgba(0, 229, 255, 0.5); color: #e0e0e0; border-radius: 8px; text-decoration: none; transition: all 0.3s ease; text-align: center; font-weight: bold; font-size: 16px; letter-spacing: 1px; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); }
+.action-btn.watch:hover { background: #00e5ff; color: black; box-shadow: 0 0 15px rgba(0,229,255,0.5); }
+.action-btn.download:hover { background: #4CAF50; border-color: #4CAF50; color: black; box-shadow: 0 0 15px rgba(76, 175, 80, 0.5); }
+h2 { margin: 0 0 10px 0; color: #ffffff; font-size: 32px; letter-spacing: 1px; }
+.genre { color: #00e5ff; font-size: 14px; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; }
+.desc { color: #ffffff; font-size: 18px; font-style: italic; margin-bottom: 20px; }
+.wiki-box { background: rgba(0, 0, 0, 0.4); padding: 20px; border-radius: 10px; border-left: 4px solid #00e5ff; margin-bottom: 30px; line-height: 1.6; color: #cccccc; }
+.wiki-box h4 { margin-top: 0; color: #00e5ff; margin-bottom: 10px; }
+.btn-container { display: flex; gap: 15px; flex-wrap: wrap; }
+button.nav-btn { padding: 14px 25px; border: none; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+.again { background: linear-gradient(45deg, #ff9800, #ff5722); color: white; box-shadow: 0px 5px 15px rgba(255, 152, 0, 0.4); }
+.home { background: rgba(255, 255, 255, 0.05); color: white; border: 1px solid rgba(255, 255, 255, 0.2); }
+button.nav-btn:hover { transform: translateY(-3px); }
+.again:hover { box-shadow: 0px 8px 25px rgba(255, 152, 0, 0.6); }
+.home:hover { background: rgba(255, 255, 255, 0.1); border-color: #00e5ff; box-shadow: 0px 5px 15px rgba(0, 229, 255, 0.2); }
+.sakura { position: fixed; top: -20px; color: #ffb7c5; font-size: 20px; animation: fall linear infinite; pointer-events: none; z-index: 5; }
+@keyframes fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+
 @media (max-width: 768px) {
     body { height: auto; min-height: 100vh; }
     .sidebar { width: 50px; left: 10px; top: 10px; bottom: 10px; }
