@@ -359,8 +359,12 @@ button.submit-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0
     <script>
         // Modal Scripts
         function toggleMenu() { 
-            document.getElementById("myDropdown").classList.toggle("show"); 
-        }
+    document.getElementById("myDropdown").classList.toggle("show"); 
+}
+
+function openModal(modalId) { document.getElementById("myDropdown").classList.remove("show"); document.getElementById(modalId).style.display = "block"; }
+
+function closeModal(modalId) { document.getElementById(modalId).style.display = "none"; }
 
         function openHistoryModal() {
             document.getElementById("myDropdown").classList.remove("show"); // Close kebab
