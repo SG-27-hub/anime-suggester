@@ -71,25 +71,38 @@ body {
     overflow-x: hidden; 
 }
 
-/* --- Sidebar Styling (Floating Capsule Effect) --- */
+/* --- Sidebar Styling (Crystal Glass Effect) --- */
 .sidebar {
     width: 70px; 
-    background: linear-gradient(to bottom, rgba(0, 229, 255, 0.05), rgba(0, 0, 0, 0.2)); 
-    backdrop-filter: blur(5px); 
-    -webkit-backdrop-filter: blur(5px);
+    
+    /* 1. The Crystal Background */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 229, 255, 0.02)); 
+    
+    /* 2. The Heavy Blur */
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    
     position: fixed;
-    top: 20px;      /* Gap from the top */
-    left: 20px;     /* Gap from the left wall */
-    bottom: 20px;   /* Gap from the bottom */
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 30px 0;
     box-sizing: border-box; 
-    border: 1px solid rgba(0, 229, 255, 0.3); /* Border on all sides now */
-    border-radius: 50px; /* Fully rounds all corners */
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.15); /* Centered shadow */
+    
+    /* 3. The Glass Edges (Light reflecting on top/left) */
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(0, 229, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 50px; 
+    
+    /* 4. Deep outer shadow + subtle inner shine */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05); 
+    
     z-index: 1000; 
 }
 
@@ -154,6 +167,14 @@ button.nav-btn:hover { transform: translateY(-3px); }
     .card { padding: 25px 20px; gap: 20px; text-align: center; justify-content: center; border-radius: 30px; } .card-right { flex: 1; min-width: 100%; text-align: center; }
     .btn-container { justify-content: center; } h2 { font-size: 24px; } .desc { font-size: 16px; }
     .wiki-box { text-align: left; font-size: 14px; padding: 15px; } button.nav-btn { font-size: 14px; padding: 12px 20px; width: 100%; box-sizing: border-box; } .btn-container a { width: 100%; }
+}
+
+@media (max-width: 600px) {
+    h1, h2 { word-break: break-word; font-size: 22px !important; }
+    .shining-text { display: block !important; }
+    .card-left, .card-right { min-width: 100% !important; }
+    .hero-card, .card { width: 100%; padding: 20px 15px; }
+    .main-content-wrapper { padding: 10px; overflow-x: hidden; }
 }
 </style>
 </head>
