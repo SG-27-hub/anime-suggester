@@ -202,6 +202,35 @@ button.submit-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0
 .sakura { position: fixed; top: -20px; color: #ffb7c5; font-size: 35px; animation: fall linear infinite; pointer-events: none; z-index: 5; }
 @keyframes fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
 
+/* --- Mobile Blocker CSS --- */
+#mobile-blocker {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background: radial-gradient(circle at center, #2b1e38 0%, #121212 100%);
+    color: white;
+    z-index: 99999;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#mobile-blocker h2 { color: #00e5ff; text-shadow: 0 0 10px #00e5ff; margin-bottom: 15px; }
+#mobile-blocker p { color: #cccccc; font-size: 18px; line-height: 1.5; max-width: 400px; }
+
+@media (max-width: 768px) {
+    #mobile-blocker {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .sidebar, .main-content-wrapper, #splash-screen, .sakura {
+        display: none !important;
+    }
+}
+
 @media (max-width: 768px) {
     body { height: auto; min-height: 100vh; }
     .sidebar { width: 50px; left: 10px; top: 10px; bottom: 10px; }
@@ -228,6 +257,12 @@ button.submit-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0
 </style>
 </head>
 <body>
+    <div id="mobile-blocker">
+        <img src="/static/logo.png" style="width: 80px; margin-bottom: 20px; animation: pulse 2s infinite; filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));">
+        <h2>Desktop Required</h2>
+        <p>This site is optimized for larger screens. Please switch to a laptop or desktop computer to view your recommendations.</p>
+    </div>
+
     {% if not skip_splash %}
     <div id="splash-screen">
         <div class="intro-content">
