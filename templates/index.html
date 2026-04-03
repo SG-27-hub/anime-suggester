@@ -386,6 +386,25 @@ button.submit-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0
     </div>
 
     <script>
+        // Aggressive Mobile Detection - Defeats "Desktop Mode"
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // Wait for the page to load
+            window.addEventListener('load', function() {
+                // Force the blocker to show
+                const blocker = document.getElementById('mobile-blocker');
+                if (blocker) {
+                    blocker.style.setProperty('display', 'flex', 'important');
+                    blocker.style.flexDirection = 'column';
+                    blocker.style.justifyContent = 'center';
+                    blocker.style.alignItems = 'center';
+                }
+                
+                // Forcefully delete the rest of the app from the screen
+                const elementsToHide = document.querySelectorAll('.sidebar, .main-content-wrapper, #splash-screen, .sakura');
+                elementsToHide.forEach(el => el.style.setProperty('display', 'none', 'important'));
+            });
+        }
+
         // Modal Scripts
         function toggleMenu() { 
     document.getElementById("myDropdown").classList.toggle("show"); 
