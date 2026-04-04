@@ -2,14 +2,25 @@ from flask import Flask, request, render_template, jsonify, redirect
 import json
 from sentence_transformers import SentenceTransformer, util
 import random
+import os
+import google.generativeai as genai
 
 app = Flask(__name__)
+
+# --- NEW: Configure Gemini API ---
+my_api_key = os.environ.get("GEMINI_API_KEY")
+if my_api_key:
+    genai.configure(api_key=my_api_key)
+    gemini_model = genai.GenerativeModel('gemini-1.5-flash')
+else:
+    print("Warning: No Gemini API Key found in environment variables.")
+    gemini_model = None
 
 # 1. Load the AI Model
 print("Loading AI Model...")
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# 2. Load Database from JSON
+# ... (keep loading your JSON database as normal) ...
 with open("anime.json", "r", encoding="utf-8") as file:
     anime_list = json.load(file)
 
@@ -98,17 +109,32 @@ def api_ask():
         best_match_idx = chosen_hit['corpus_id']
         found_anime = anime_list[best_match_idx]
 
-    # 3. Create a list of conversational responses
-    chat_phrases = [
-        f"I think you'll really enjoy **{found_anime['title']}**!",
-        f"Based on what you're looking for, **{found_anime['title']}** is a perfect match.",
-        f"Oh, I've got a great one for you: **{found_anime['title']}**.",
-        f"If you want something like that, you should definitely check out **{found_anime['title']}**!",
-        f"Here is a fantastic recommendation: **{found_anime['title']}**. I highly recommend it."
-    ]
+    # 3. Generate a real AI response using Gemini
+    if gemini_model:
+        # We build a private instruction telling Gemini exactly what to say
+        system_prompt = f"""
+        You are a friendly AI romance anime recommender.
+        The user asked for: "{user_prompt}"
+        Based on their request, you have selected the anime: "{found_anime['title']}".
+        Here is the synopsis of the anime: "{found_anime['desc']}"
+        
+        Write a short, engaging 2-3 sentence response telling the user exactly why this specific anime fits what they asked for. Use bullet points if you need to list anything, but do not use any emojis.
+        """
+        
+        try:
+            # Ask Gemini to generate the text
+            response = gemini_model.generate_content(system_prompt)
+            ai_text = response.text
+        except Exception as e:
+            print("Gemini API Error:", e)
+            # Fallback text just in case the API times out
+            ai_text = f"Based on your prompt, I think you'll really enjoy **{found_anime['title']}**!"
+    else:
+        # Fallback if the API key isn't working
+        ai_text = f"I found a great match for you: **{found_anime['title']}**."
     
-    # Pick a random phrase and add it to the anime data being sent back
-    found_anime['ai_message'] = random.choice(chat_phrases)
+    # Add the generated text to the anime data being sent back to chat.html
+    found_anime['ai_message'] = ai_text
 
     return jsonify(found_anime)
     
