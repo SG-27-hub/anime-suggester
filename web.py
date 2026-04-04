@@ -109,7 +109,7 @@ def api_ask():
         best_match_idx = chosen_hit['corpus_id']
         found_anime = anime_list[best_match_idx]
 
-# 3. Generate a real AI response using Gemini
+    # 3. Generate a real AI response using Gemini
     if client:
         # We build a private instruction telling Gemini exactly what to say
         system_prompt = f"""
@@ -129,9 +129,11 @@ def api_ask():
             )
             ai_text = response.text
         except Exception as e:
-            print("Gemini API Error:", e)
-            # Fallback text just in case the API times out
-            ai_text = f"Based on your prompt, I think you'll really enjoy **{found_anime['title']}**!"
+            # Added flush=True to force the log to print immediately
+            print("Gemini API Error:", e, flush=True) 
+            
+            # Temporarily send the exact error directly to the chat window!
+            ai_text = f"- ERROR: {str(e)}"
     else:
         # Fallback if the API key isn't working
         ai_text = f"I found a great match for you: **{found_anime['title']}**."
