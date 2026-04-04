@@ -124,7 +124,7 @@ def api_ask():
         try:
             # Ask Gemini to generate the text using the NEW package
             response = client.models.generate_content(
-                model='gemini-1.5-flash',
+                model='gemini-2.5-flash',  # <--- THIS IS THE ONLY CHANGE!
                 contents=system_prompt
             )
             ai_text = response.text
