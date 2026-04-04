@@ -3,4 +3,4 @@ gunicorn
 sentence-transformers
 scikit-learn
 torch
-google-generativeai
+google-genai
