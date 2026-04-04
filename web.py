@@ -3,18 +3,18 @@ import json
 from sentence_transformers import SentenceTransformer, util
 import random
 import os
-import google.generativeai as genai
+from google import genai # NEW IMPORT
 
 app = Flask(__name__)
 
 # --- NEW: Configure Gemini API ---
 my_api_key = os.environ.get("GEMINI_API_KEY")
 if my_api_key:
-    genai.configure(api_key=my_api_key)
-    gemini_model = genai.GenerativeModel('gemini-1.5-flash')
+    # The new client automatically finds your key in the Hugging Face secrets!
+    client = genai.Client()
 else:
     print("Warning: No Gemini API Key found in environment variables.")
-    gemini_model = None
+    client = None
 
 # 1. Load the AI Model
 print("Loading AI Model...")
@@ -109,8 +109,8 @@ def api_ask():
         best_match_idx = chosen_hit['corpus_id']
         found_anime = anime_list[best_match_idx]
 
-    # 3. Generate a real AI response using Gemini
-    if gemini_model:
+# 3. Generate a real AI response using Gemini
+    if client:
         # We build a private instruction telling Gemini exactly what to say
         system_prompt = f"""
         You are a friendly AI romance anime recommender.
@@ -122,8 +122,11 @@ def api_ask():
         """
         
         try:
-            # Ask Gemini to generate the text
-            response = gemini_model.generate_content(system_prompt)
+            # Ask Gemini to generate the text using the NEW package
+            response = client.models.generate_content(
+                model='gemini-1.5-flash',
+                contents=system_prompt
+            )
             ai_text = response.text
         except Exception as e:
             print("Gemini API Error:", e)
