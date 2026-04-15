@@ -22,11 +22,12 @@
             font-size: 14px; cursor: pointer; transition: 0.2s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
         }
         .history-item:hover { background: rgba(0, 229, 255, 0.1); color: #00e5ff; }
-        .back-btn {
+        .action-btn {
             background: transparent; border: 1px solid #00e5ff; color: #00e5ff; padding: 10px;
             border-radius: 8px; cursor: pointer; text-align: center; text-decoration: none; margin-top: 10px;
+            display: block; width: 100%; box-sizing: border-box; font-size: 14px;
         }
-        .back-btn:hover { background: rgba(0, 229, 255, 0.1); }
+        .action-btn:hover { background: rgba(0, 229, 255, 0.1); }
 
         /* Main Chat Area */
         .chat-container { flex-grow: 1; display: flex; flex-direction: column; position: relative; }
@@ -62,12 +63,39 @@
         }
         .input-box button:hover { transform: scale(1.1); box-shadow: 0 0 15px rgba(0, 229, 255, 0.5); }
 
+        /* Typing Dots Animation */
+        .typing-dots { display: flex; align-items: center; gap: 4px; padding: 5px 0; }
+        .typing-dots span {
+            width: 8px; height: 8px; background-color: #00e5ff; border-radius: 50%;
+            display: inline-block; animation: blink 1.4s infinite both;
+        }
+        .typing-dots span:nth-child(1) { animation-delay: 0s; }
+        .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
             body { flex-direction: column; }
-            .sidebar { width: 100%; height: auto; flex-direction: row; padding: 15px; border-right: none; border-bottom: 1px solid rgba(0, 229, 255, 0.2); }
-            .sidebar h3, .history-list { display: none; }
-            .back-btn { margin-top: 0; width: 100%; border: none; background: rgba(0, 229, 255, 0.1); }
-            .chat-container { width: 100%; height: calc(100vh - 70px); }
+            .sidebar { 
+                width: 100%; height: auto; flex-direction: column; padding: 15px; 
+                border-right: none; border-bottom: 1px solid rgba(0, 229, 255, 0.2); 
+            }
+            .sidebar h3 { display: block; margin-bottom: 10px; }
+            .history-list { 
+                display: flex; flex-direction: row; overflow-x: auto; 
+                gap: 10px; padding-bottom: 10px; white-space: nowrap; -webkit-overflow-scrolling: touch;
+            }
+            .history-item { margin-bottom: 0; flex-shrink: 0; max-width: 200px; }
+            
+            .button-group { display: flex; gap: 10px; width: 100%; margin-top: 5px; }
+            .action-btn { margin-top: 0; border: none; background: rgba(0, 229, 255, 0.1); }
+            
+            .chat-container { width: 100%; height: calc(100vh - 160px); }
             .input-box { width: 90%; }
             .message { max-width: 95%; }
         }
@@ -78,13 +106,16 @@
     <div class="sidebar">
         <h3><i class="bi bi-clock-history"></i> Recent Prompts</h3>
         <ul class="history-list" id="promptHistory">
-            </ul>
-        <a href="/?skip_splash=1" class="back-btn"><i class="bi bi-house"></i> Back to Main Site</a>
+        </ul>
+        <div class="button-group">
+            <button onclick="clearChat()" class="action-btn"><i class="bi bi-trash"></i> Clear Chat</button>
+            <a href="/?skip_splash=1" class="action-btn"><i class="bi bi-house"></i> Back Home</a>
+        </div>
     </div>
 
     <div class="chat-container">
         <div class="chat-log" id="chatLog">
-            <div class="message ai-message">
+            <div class="message ai-message" id="welcomeMessage">
                 Hello! I am the Romance Anime AI. Describe the kind of romance you want to watch (e.g., "a relaxing school show where they get together fast").
             </div>
         </div>
@@ -105,7 +136,10 @@
         const promptInput = document.getElementById('promptInput');
         const historyList = document.getElementById('promptHistory');
 
-        // Load history from local storage when page opens
+        // Conversation History Array
+        let conversationHistory = [];
+
+        // Load visual prompt history from local storage
         let prompts = JSON.parse(localStorage.getItem('aiPromptHistory')) || [];
         renderHistory();
 
@@ -125,26 +159,45 @@
             addMessage(text, 'user-message');
             promptInput.value = '';
 
-            // 2. Save to History (Limit to 5)
-            prompts.unshift(text);
-            if (prompts.length > 5) prompts = prompts.slice(0, 5);
-            localStorage.setItem('aiPromptHistory', JSON.stringify(prompts));
-            renderHistory();
+            // Update Conversation Memory (keep only last 3 exchanges / 6 messages)
+            conversationHistory.push({ role: "user", content: text });
+            if (conversationHistory.length > 6) {
+                conversationHistory = conversationHistory.slice(-6);
+            }
 
-            // 3. Show a "thinking" message
+            // 2. Save to Visual Prompt History (Limit to 5)
+            if(!prompts.includes(text)){
+                prompts.unshift(text);
+                if (prompts.length > 5) prompts = prompts.slice(0, 5);
+                localStorage.setItem('aiPromptHistory', JSON.stringify(prompts));
+                renderHistory();
+            }
+
+            // 3. Show a "thinking" message using the CSS animation
             const thinkingId = 'thinking-' + Date.now();
-            addMessage("Thinking...", 'ai-message', thinkingId);
+            const typingIndicatorHTML = `<div class="typing-dots"><span></span><span></span><span></span></div>`;
+            addHTMLMessage(typingIndicatorHTML, 'ai-message', thinkingId);
 
             // 4. Send to Python Backend
             try {
                 const response = await fetch('/api/ask', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt: text })
+                    // Send both the current prompt and the recent history
+                    body: JSON.stringify({ 
+                        prompt: text, 
+                        history: conversationHistory 
+                    })
                 });
                 
                 const anime = await response.json();
                 
+                // Add AI response to conversation memory
+                conversationHistory.push({ role: "ai", content: anime.ai_message });
+                if (conversationHistory.length > 6) {
+                    conversationHistory = conversationHistory.slice(-6);
+                }
+
                 // 5. Replace thinking message with the Chat Text and Anime Card
                 const thinkingBubble = document.getElementById(thinkingId);
                 thinkingBubble.innerHTML = `
@@ -174,6 +227,15 @@
             chatLog.scrollTop = chatLog.scrollHeight;
         }
 
+        function addHTMLMessage(html, className, id = '') {
+            const div = document.createElement('div');
+            div.className = `message ${className}`;
+            div.innerHTML = html;
+            if (id) div.id = id;
+            chatLog.appendChild(div);
+            chatLog.scrollTop = chatLog.scrollHeight;
+        }
+
         function renderHistory() {
             historyList.innerHTML = '';
             prompts.forEach(p => {
@@ -183,6 +245,17 @@
                 li.onclick = () => { promptInput.value = p; }; // Clicking an old prompt fills the box
                 historyList.appendChild(li);
             });
+        }
+
+        function clearChat() {
+            // Wipe visual log and reset to welcome message
+            chatLog.innerHTML = `
+                <div class="message ai-message" id="welcomeMessage">
+                    Hello! I am the Romance Anime AI. Describe the kind of romance you want to watch (e.g., "a relaxing school show where they get together fast").
+                </div>
+            `;
+            // Clear conversational memory array
+            conversationHistory = [];
         }
     </script>
 </body>
