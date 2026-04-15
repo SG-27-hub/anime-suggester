@@ -5,6 +5,8 @@ import random
 import os
 from google import genai 
 from functools import lru_cache 
+import traceback
+from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
 
@@ -207,6 +209,14 @@ def rate_anime():
         json.dump(ratings, f, indent=4)
         
     return jsonify({"success": True, "message": "Rating saved!"})
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    # Pass through standard HTTP errors
+    if isinstance(e, HTTPException):
+        return e
+    # Print the exact Python error and line number to the screen
+    return f"<pre>Error: {str(e)}\n\nTraceback:\n{traceback.format_exc()}</pre>", 500
     
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
