@@ -3,40 +3,149 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="referrer" content="no-referrer">
-    <meta name="google-site-verification" content="08zokMmqphln0DiDL3K2hhFBmYpnGEvoqnsZN9jAxtQ" />
+    <meta name="google-site-verification" content="w8BgvHicjoGLnP1I2-2iZs3byej1vjkq5WzeGQfdPWA" />
     
     <title>Romance Anime Suggester</title>
     <link rel="icon" type="image/png" href="/static/logo.png">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <style>
-/* Menu & Modal CSS */
-.kebab-menu { position: relative; display: flex; justify-content: center; width: 100%; }
-.kebab-icon { color: #00e5ff; font-size: 35px; cursor: pointer; user-select: none; text-shadow: 0 0 10px rgba(0, 229, 255, 0.5); transition: 0.3s; line-height: 20px; display: flex; align-items: center; justify-content: center; height: 30px; }
-.kebab-icon:hover { transform: scale(1.1); text-shadow: 0 0 20px rgba(0, 229, 255, 0.9); }
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap');
 
-/* --- History Menu CSS --- */
-.history-menu { 
-    position: relative; 
-    display: flex; 
-    justify-content: center; 
-    width: 100%; 
-    margin-top: 35px; /* Space between kebab and clock */
+/* --- General Page Reset --- */
+body {
+    background-color: #080a0f; 
+    background-size: cover;    
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    overflow-y: auto; 
 }
-.history-icon { 
-    color: #00e5ff; 
-    font-size: 24px; 
-    cursor: pointer; 
-    transition: 0.3s; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+
+.main-content-wrapper {
+    margin-left: 140px; 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh; 
+    overflow-y: visible; 
+    
+    box-sizing: border-box;
+    width: calc(100% - 140px);
+    background: transparent; 
 }
-.history-icon:hover { 
-    transform: scale(1.1); 
-    text-shadow: 0 0 20px rgba(0, 229, 255, 0.9); 
+
+/* --- Sidebar Navigation (Floating Glass Design) --- */
+.sidebar {
+    width: 100px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 229, 255, 0.02)); 
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 25px; 
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    border-right: 1px solid rgba(0, 229, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05); 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 0;
+    box-sizing: border-box;
+    z-index: 1000;
 }
-/* Shining Text Animation */
+
+.sidebar .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-top-logo {
+    width: 35px;
+    height: auto;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.sidebar-top-logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.8)); 
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    transition: opacity 0.3s, color 0.3s;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.nav-links a i {
+    font-size: 20px;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    opacity: 1;
+    color: #00e5ff;
+}
+
+.nav-links a.active { position: relative; }
+.nav-links a.active i { text-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 15px rgba(0, 229, 255, 0.6); }
+.nav-links a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 3px;
+    background-color: #00e5ff;
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+.user-profile { position: relative; display: flex; justify-content: center; }
+.user-profile i { font-size: 24px; opacity: 0.7; cursor: pointer; color: white; transition: opacity 0.3s; }
+.user-profile i:hover { opacity: 1; color: #00e5ff; text-shadow: 0 0 10px rgba(0, 229, 255, 0.8); }
+
+.dropdown-content { display: none; position: absolute; left: 85px; bottom: -10px; background-color: rgba(20, 20, 20, 0.95); backdrop-filter: blur(10px); min-width: 150px; box-shadow: 0 10px 25px rgba(0,0,0,0.8); border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 12px; overflow: hidden; text-align: left; z-index: 2000; }
+.dropdown-content.show { display: block; animation: fadeIn 0.3s ease-out; }
+.dropdown-content a { color: white; padding: 15px 20px; text-decoration: none; display: block; transition: 0.2s; font-size: 16px; cursor: pointer; }
+.dropdown-content a:hover { background-color: rgba(0, 229, 255, 0.2); color: #00e5ff; padding-left: 25px; }
+
 .shining-text {
     background: linear-gradient(90deg, #00e5ff, #ffffff, #00e5ff);
     background-size: 200% auto;
@@ -44,19 +153,11 @@
     -webkit-background-clip: text;
     background-clip: text;
     animation: shine 3s linear infinite;
-    text-shadow: none; /* Removed shadow so the gradient is crisp */
+    text-shadow: none; 
 }
+@keyframes shine { to { background-position: 200% center; } }
 
-@keyframes shine {
-    to { background-position: 200% center; }
-}
-
-/* Dropdown pops out to the right of the sidebar */
-.dropdown-content { display: none; position: absolute; left: 85px; top: -10px; background-color: rgba(20, 20, 20, 0.95); backdrop-filter: blur(10px); min-width: 150px; box-shadow: 0 10px 25px rgba(0,0,0,0.8); border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 12px; overflow: hidden; text-align: left; z-index: 2000; }
-.dropdown-content.show { display: block; animation: fadeIn 0.3s ease-out; }
-.dropdown-content a { color: white; padding: 15px 20px; text-decoration: none; display: block; transition: 0.2s; font-size: 16px; cursor: pointer; }
-.dropdown-content a:hover { background-color: rgba(0, 229, 255, 0.2); color: #00e5ff; padding-left: 25px; }
-
+/* Modals */
 .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(5px); overflow-y: auto; }
 .modal-content { background: rgba(20, 20, 20, 0.95); margin: 10% auto; padding: 30px; border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 15px; width: 80%; max-width: 500px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); color: white; text-align: left; animation: fadeIn 0.3s ease-out; }
 .modal-content h2 { color: #00e5ff; margin-top: 0; border-bottom: 1px solid rgba(0, 229, 255, 0.2); padding-bottom: 10px; }
@@ -65,241 +166,303 @@
 .modal-content p { color: #cccccc; line-height: 1.6; }
 .close { color: #aaaaaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; transition: 0.2s; }
 .close:hover { color: #00e5ff; }
-.pro { color: #4CAF50; font-weight: bold; }
-.con { color: #f44336; font-weight: bold; }
-.desktop-warning { color: #ffb86c; font-size: 0.85rem; text-align: center; margin-top: 20px; font-style: italic; display: none; }
+
 @keyframes fadeIn { from {opacity: 0; transform: translateY(-10px);} to {opacity: 1; transform: translateY(0);} }
 
-@media (max-width: 768px) {
-    .sidebar { 
-        width: 50px; 
-        border-radius: 0 25px 25px 0; /* Half of 50px */
-    }
-}
-
 {% if not skip_splash %}
-/* Splash Screen CSS - Bulletproof CSS Only Version */
-#splash-screen { 
-    position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
-    background-color: #0b0e14; display: flex; justify-content: center; align-items: center; 
-    z-index: 9999; 
-    animation: forceHide 0.5s ease-out forwards;
-    animation-delay: 3s; /* How long it stays on screen */
-    pointer-events: none; /* Lets you click through it even if it glitches */
+/* --- New Splash Screen CSS --- */
+#new-splash {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: #080a0f; 
+    display: flex; justify-content: center; align-items: center;
+    z-index: 9999; cursor: pointer; overflow: hidden;
 }
-@keyframes forceHide {
-    to { opacity: 0; visibility: hidden; z-index: -100; }
+
+/* Ambient radial glow */
+.radial-glow {
+    position: absolute; width: 70vw; height: 70vw;
+    background: radial-gradient(circle, rgba(0,229,255,0.15) 0%, rgba(128,0,128,0.05) 40%, rgba(0,0,0,0) 70%);
+    z-index: 1; pointer-events: none;
 }
-.intro-content { display: flex; flex-direction: column; align-items: center; }
-.splash-logo { width: 150px; height: auto; margin-bottom: 20px; animation: pulse 2s infinite; filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8)); border-radius: 30px; }
-.fade-in-text { color: #00e5ff; font-size: 2rem; text-shadow: 0 0 15px #00e5ff; animation: pulse 2s infinite; }
-@keyframes pulse { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
+
+.splash-center {
+    position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center;
+    pointer-events: none; 
+}
+
+/* Logo & Spinning Orbits */
+.logo-container {
+    position: relative; width: 180px; height: 180px; display: flex; justify-content: center; align-items: center; margin-bottom: 30px;
+}
+.center-sakura {
+    width: 90px; z-index: 5; filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.4));
+}
+.orbit {
+    position: absolute; border-radius: 50%; border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+.ring1 {
+    width: 140px; height: 140px; animation: spin 10s linear infinite;
+    border-top: 2px solid #00e5ff; border-bottom: 2px solid #9d00ff;
+}
+.ring2 {
+    width: 180px; height: 180px; animation: spin 15s linear infinite reverse;
+    border-left: 2px solid white; border-right: 2px solid #00e5ff;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Typography */
+.splash-title {
+    font-family: 'Cinzel', serif; font-size: 42px; margin: 0;
+    background: linear-gradient(90deg, #00e5ff, #ffffff, #9d00ff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.2); text-align: center;
+}
+.gradient-divider {
+    width: 80%; height: 2px; margin: 15px 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+}
+.splash-tagline {
+    font-style: italic; color: #cccccc; font-size: 16px; margin-bottom: 40px; letter-spacing: 2px;
+}
+
+/* CTA Button */
+.enter-btn {
+    background: transparent; border: 2px solid #00e5ff; color: #00e5ff;
+    padding: 12px 40px; font-size: 16px; border-radius: 30px;
+    text-transform: uppercase; letter-spacing: 2px; position: relative; overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+}
+.enter-btn::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,229,255,0.4), transparent);
+    animation: sweep 3s infinite;
+}
+@keyframes sweep { 100% { left: 200%; } }
+
+.click-hint {
+    color: #666; font-size: 11px; margin-top: 20px; animation: hintBlink 2s infinite; text-transform: uppercase; letter-spacing: 1px;
+}
+@keyframes hintBlink { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+/* Particles */
+.particles { position: absolute; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.particle {
+    position: absolute; bottom: -20px; background: white; border-radius: 50%;
+    opacity: 0.5; animation: floatUp linear infinite;
+}
+@keyframes floatUp {
+    to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
 {% endif %}
-
-/* --- General Page Reset --- */
-body {
-    background: radial-gradient(circle at center, #2b1e38 0%, #121212 100%);
-    color: white;
-    font-family: sans-serif;
-    text-align: center;
-    margin: 0;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-/* --- Sidebar Styling (Crystal Glass Effect) --- */
-.sidebar {
-    width: 70px; 
-    
-    /* 1. The Crystal Background */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(0, 229, 255, 0.02)); 
-    
-    /* 2. The Heavy Blur */
-    backdrop-filter: blur(16px); 
-    -webkit-backdrop-filter: blur(16px);
-    
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 30px 0;
-    box-sizing: border-box; 
-    
-    /* 3. The Glass Edges (Light reflecting on top/left) */
-    border-top: 1px solid rgba(255, 255, 255, 0.25);
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-    border-right: 1px solid rgba(0, 229, 255, 0.2);
-    border-bottom: 1px solid rgba(0, 229, 255, 0.2);
-    border-radius: 50px; 
-    
-    /* 4. Deep outer shadow + subtle inner shine */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.05); 
-    
-    z-index: 1000; 
-}
-
-/* --- Main Content Area --- */
-.main-content-wrapper {
-    margin-left: 110px; /* 70px width + 20px left gap + 20px spacing */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    min-height: 100vh;
-    box-sizing: border-box;
-    width: calc(100% - 110px);
-}
 
 /* Home Page Specific CSS */
 .hero-card {
-    background: rgba(15, 20, 30, 0.7); 
-    backdrop-filter: blur(15px);
+    background: rgba(15, 20, 30, 0.7);
+    backdrop-filter: blur(11px);
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(0, 229, 255, 0.2);
     padding: 50px 40px;
-    border-radius: 40px; /* Increased curve */
+    border-radius: 40px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 229, 255, 0.05);
     position: relative;
     z-index: 10;
     animation: float 6s ease-in-out infinite;
-    max-width: 600px;
+    max-width: 900px;
     width: 90%;
     box-sizing: border-box;
 }
 .hero-card:hover { animation-play-state: paused; }
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+
 .guarantee-badge {
     background: rgba(0, 229, 255, 0.1); border: 1px solid rgba(0, 229, 255, 0.4); color: #00e5ff;
     padding: 8px 20px; border-radius: 30px; display: inline-block; font-size: 13px; font-weight: bold;
     letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 25px; box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
 }
-h1 { color: #00e5ff; font-size: 45px; text-shadow: 0 0 10px #00e5ff, 0 0 20px rgba(0, 229, 255, 0.5); margin-top: 0; margin-bottom: 15px; }
-p { color: #cccccc; font-size: 18px; margin-bottom: 40px; }
-.search-container { position: relative; margin-bottom: 20px; width: 80%; max-width: 300px; margin-left: auto; margin-right: auto; }
-.search-input { width: 100%; padding: 15px 20px; background-color: rgba(0, 0, 0, 0.6); border: 2px solid #00e5ff; border-radius: 12px; color: white; font-size: 18px; outline: none; transition: 0.3s; box-sizing: border-box; }
+
+h1 { color: #00e5ff; font-size: 45px; text-shadow: 0 0 10px #00e5ff, 0 0 20px rgba(0, 229, 255, 0.5); margin-top: 0; margin-bottom: 15px; white-space: nowrap; }
+.hero-card p.subtitle { font-size: 1.2rem; color: #e0e0e0; margin-bottom: 40px; line-height: 1.5; }
+
+/* Search Bar & Forms */
+.search-container { position: relative; margin-bottom: 25px; width: 100%; display: flex; align-items: center; } 
+.search-icon { position: absolute; left: 22px; color: #888; font-size: 20px; pointer-events: none; z-index: 5; }
+.search-input { width: 100%; padding: 15px 20px 15px 55px; background-color: rgba(0, 0, 0, 0.6); border: 2px solid #00e5ff; border-radius: 50px; color: white; font-size: 18px; outline: none; transition: 0.3s; box-sizing: border-box; }
 .search-input:hover, .search-input:focus { box-shadow: 0 0 15px rgba(0, 229, 255, 0.4); background-color: rgba(0, 0, 0, 0.8); }
 .search-input::placeholder { color: #888; }
-.custom-select { position: relative; width: 80%; max-width: 300px; margin: 0 auto 30px auto; text-align: left; }
+
+.action-group { display: flex; gap: 20px; justify-content: center; align-items: center; margin-bottom: 10px; width: 100%; }
+
+.custom-select { position: relative; width: 250px; margin: 0; text-align: left; }
 .custom-select select { display: none; }
 .select-selected { background-color: rgba(0, 0, 0, 0.6); color: white; border: 2px solid #00e5ff; padding: 15px 40px 15px 20px; font-size: 18px; border-radius: 12px; cursor: pointer; transition: 0.3s; background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300e5ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e"); background-repeat: no-repeat; background-position: right 15px center; background-size: 20px; user-select: none; }
 .select-selected:hover, .select-selected.active { box-shadow: 0 0 15px rgba(0, 229, 255, 0.4); background-color: rgba(0, 0, 0, 0.8); }
-.select-items { position: absolute; background-color: rgba(20, 20, 20, 0.95); backdrop-filter: blur(10px); top: 100%; left: 0; right: 0; z-index: 99; border: 1px solid rgba(0, 229, 255, 0.5); border-radius: 12px; margin-top: 8px; overflow-x: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8); }
+.select-items { position: absolute; background-color: rgba(15, 20, 30, 0.95); backdrop-filter: blur(10px); top: 100%; left: 0; right: 0; z-index: 99; border: 1px solid rgba(0, 229, 255, 0.5); border-radius: 12px; margin-top: 8px; overflow-x: hidden; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8); max-height: 160px; overflow-y: auto; }
 .select-hide { display: none; }
 .select-items div { color: white; padding: 15px 20px; cursor: pointer; transition: 0.2s; font-size: 18px; text-align: left; }
 .select-items div:hover { background-color: rgba(0, 229, 255, 0.2); color: #00e5ff; padding-left: 25px; }
+
 #autocomplete-list { max-height: 220px; overflow-y: auto; }
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); border-radius: 10px; }
 ::-webkit-scrollbar-thumb { background: rgba(0, 229, 255, 0.5); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: #00e5ff; }
-button.submit-btn { background: linear-gradient(45deg, #00e5ff, #0077ff); border: none; padding: 16px 40px; font-size: 20px; font-weight: bold; border-radius: 30px; color: white; cursor: pointer; transition: all 0.3s ease; box-shadow: 0px 5px 20px rgba(0, 119, 255, 0.4); text-transform: uppercase; letter-spacing: 1px; }
+
+button.submit-btn { background: linear-gradient(45deg, #00e5ff, #0077ff); border: none; padding: 15px 35px; font-size: 18px; font-weight: bold; border-radius: 12px; color: white; cursor: pointer; transition: all 0.3s ease; box-shadow: 0px 5px 20px rgba(0, 119, 255, 0.4); text-transform: uppercase; letter-spacing: 1px; margin: 0; }
 button.submit-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0px 8px 25px rgba(0, 229, 255, 0.6); }
+
+/* --- Stats & Hotkey UI --- */
 .stats-text { margin-top: 35px; font-size: 14px; color: #888888; font-style: italic; }
+kbd.shortcut { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; padding: 2px 6px; font-family: monospace; color: #00e5ff; font-weight: bold; }
+.desktop-warning { color: #ffb86c; font-size: 0.85rem; text-align: center; margin-top: 20px; font-style: italic; display: none; }
+
+/* --- Trending Section --- */
+.trending-container {
+    margin-top: 35px;
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
+    z-index: 10;
+}
+.trending-container h3 {
+    color: #00e5ff;
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.trending-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+.trending-card {
+    background: rgba(15, 20, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.trending-card:hover {
+    transform: translateY(-5px);
+    border-color: #00e5ff;
+    box-shadow: 0 8px 20px rgba(0, 229, 255, 0.3);
+}
+.trending-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.trending-title {
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .sakura { position: fixed; top: -20px; color: #ffb7c5; font-size: 35px; animation: fall linear infinite; pointer-events: none; z-index: 5; }
 @keyframes fall { 0% { transform: translateY(-10px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
 
-/* --- Mobile Blocker CSS --- */
-#mobile-blocker {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100vh;
-    background: radial-gradient(circle at center, #2b1e38 0%, #121212 100%);
-    color: white;
-    z-index: 99999;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-#mobile-blocker h2 { color: #00e5ff; text-shadow: 0 0 10px #00e5ff; margin-bottom: 15px; }
-#mobile-blocker p { color: #cccccc; font-size: 18px; line-height: 1.5; max-width: 400px; }
-
+/* --- Mobile Logic Overrides --- */
 @media (max-width: 768px) {
-    #mobile-blocker {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .sidebar, .main-content-wrapper, #splash-screen, .sakura {
-        display: none !important;
-    }
-}
+    /* 1. Kill the Blocker */
+    #mobile-blocker { display: none !important; }
 
-@media (max-width: 768px) {
-    body { height: auto; min-height: 100vh; }
-    .sidebar { width: 50px; left: 10px; top: 10px; bottom: 10px; }
-    .main-content-wrapper { margin-left: 70px; width: calc(100% - 70px); padding: 20px 10px; box-sizing: border-box; display: flex; align-items: center; justify-content: flex-start; margin-top: 20px; }
-    .kebab-icon { font-size: 22px; }
-    .dropdown-content { left: 60px; }
-}
+    /* 2. Allow the page to scroll */
+    body, .main-content-wrapper { 
+        overflow-y: auto !important; 
+        height: auto !important;
+        display: block !important;
+    }
 
-@media (max-width: 600px) {
-    .hero-card, .card { padding: 30px 15px; width: 100%; max-width: 100%; border-radius: 25px; box-sizing: border-box; margin: 0 auto; }
-    
-    h1 { font-size: 22px !important; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; line-height: 1.3; margin-top: 10px; }
-    h1 img { width: 25px !important; }
-    
-    p { font-size: 14px; margin-bottom: 20px; }
-    .guarantee-badge { font-size: 10px; padding: 6px 12px; display: inline-block; white-space: normal; line-height: 1.4; }
-    .search-container, .custom-select { width: 100%; max-width: 100%; box-sizing: border-box; }
-    .search-input, .select-selected { font-size: 16px; padding: 12px; box-sizing: border-box; width: 100%; }
-    button.submit-btn { font-size: 16px; padding: 14px 20px; width: 100%; box-sizing: border-box; }
-    .stats-text { margin-top: 20px; font-size: 12px; }
-    .shining-text { display: flex !important; }
-    .card-left, .card-right { min-width: 100% !important; width: 100%; box-sizing: border-box; }
+    /* 3. Move Sidebar to the Bottom */
+    .sidebar {
+        width: 100% !important;
+        height: 70px !important;
+        top: auto !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        flex-direction: row !important;
+        border-radius: 20px 20px 0 0 !important; /* Round the top corners */
+        padding: 0 10px !important;
+        position: fixed !important;
+    }
+
+    /* 4. Make Nav Links horizontal */
+    .nav-links {
+        flex-direction: row !important;
+        width: 100% !important;
+        justify-content: space-around !important;
+        gap: 0 !important;
+    }
+
+    .nav-links a span { display: none; } /* Hide text, show only icons for space */
+
+    /* 5. Fix the Main Content */
+    .main-content-wrapper {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding-bottom: 90px !important; /* Space so content isn't under the nav */
+    }
+
+    /* 6. Scale down the text so it doesn't wrap weirdly */
+    h1 { font-size: 28px !important; white-space: normal !important; }
+    .hero-card { padding: 30px 20px !important; }
 }
 </style>
 </head>
 <body>
-    <div id="mobile-blocker">
-        <img src="/static/logo.png" style="width: 80px; margin-bottom: 20px; animation: pulse 2s infinite; filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.8));">
-        <h2>Desktop Required</h2>
-        <p>This site is optimized for larger screens. Please switch to a laptop or desktop computer to view your recommendations.</p>
-    </div>
 
     {% if not skip_splash %}
-    <div id="splash-screen">
-        <div class="intro-content">
-            <img src="/static/logo.png" alt="App Logo" class="splash-logo">
-           <h1 class="shining-text" style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
-    <img src="/static/logo.png" style="width: 35px;" class="reveal-word" style="animation-delay: 0.1s;"> 
-    <span class="reveal-word" style="animation-delay: 0.5s;">Welcome</span> 
-    <span class="reveal-word" style="animation-delay: 0.9s;">to</span> 
-    <span class="reveal-word" style="animation-delay: 1.3s;">Romance Anime Suggester</span> 
-    <img src="/static/logo.png" style="width: 35px;" class="reveal-word" style="animation-delay: 1.7s;">
-</h1>
+    <div id="new-splash" onclick="window.location.href='/?skip_splash=1'">
+        <div class="radial-glow"></div>
+        <div class="particles" id="particle-container"></div>
+
+        <div class="splash-center">
+            <div class="logo-container">
+                <div class="orbit ring1"></div>
+                <div class="orbit ring2"></div>
+                <img src="/static/logo.png" class="center-sakura" alt="App Logo">
+            </div>
+
+            <h1 class="splash-title">Romance Anime Suggester</h1>
+            <div class="gradient-divider"></div>
+            <p class="splash-tagline">Find your perfect happy ending</p>
+
+            <div class="enter-btn">Enter</div>
+            <p class="click-hint">click anywhere to continue</p>
         </div>
     </div>
     {% endif %}
 
     <div class="sidebar">
-        <div class="kebab-menu">
-            <div class="kebab-icon" onclick="toggleMenu()">&#8942;</div>
+        <div class="logo">
+            <img src="/static/logo.png" class="sidebar-top-logo">
+        </div>
+        
+        <div class="nav-links">
+            <a href="/" class="active"><i class="ri-home-5-line"></i><span>Home</span></a>
+            <a onclick="openHistoryModal()"><i class="ri-history-line"></i><span>History</span></a>
+            <a onclick="openWishlistModal()"><i class="ri-heart-line"></i><span>Wishlist</span></a>
+            <a onclick="openAllAnimeModal()"><i class="ri-movie-line"></i><span>All Anime</span></a>
+            <a href="/chat"><i class="ri-robot-2-line"></i><span>AI Chat</span></a>
+        </div>
+        
+        <div class="user-profile">
+            <i class="ri-more-2-fill" onclick="toggleMenu()"></i>
+            
             <div class="dropdown-content" id="myDropdown">
                 <a onclick="openModal('aboutModal')">About</a>
                 <a onclick="openModal('contactModal')">Contact</a>
                 <a onclick="openModal('disclaimerModal')">Disclaimer</a>
             </div>
         </div>
-
-        <div class="history-menu" style="display: flex; flex-direction: column; gap: 25px;">
-    <div class="history-icon" onclick="openHistoryModal()" title="Recent History">
-        <i class="bi bi-clock-history"></i>
-    </div>
-    <div class="history-icon" onclick="window.location.href='/chat'" title="AI Chat">
-        <i class="bi bi-robot"></i> 
-    </div>
-    <div class="history-icon" onclick="openAllAnimeModal()" title="View All Anime">
-        <i class="bi bi-collection-play"></i> 
-    </div>
-</div>
     </div>
 
     <div class="main-content-wrapper">
@@ -307,9 +470,16 @@ button.submit-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0
           <div class="modal-content">
             <span class="close" onclick="closeModal('historyModal')">&times;</span>
             <h2>Recent History</h2>
-            <ul id="historyList" style="list-style-type: none; padding: 0; margin-top: 20px;">
-                </ul>
+            <ul id="historyList" style="list-style-type: none; padding: 0; margin-top: 20px;"></ul>
           </div>
+        </div>
+
+        <div id="wishlistModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('wishlistModal')">&times;</span>
+                <h2>My Wishlist</h2>
+                <ul id="wishlistContainer" style="list-style-type: none; padding: 0; margin-top: 20px;"></ul>
+            </div>
         </div>
 
         <div id="aboutModal" class="modal">
@@ -350,8 +520,7 @@ button.submit-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0
           <div class="modal-content" style="max-height: 85vh; overflow-y: auto; max-width: 800px;">
             <span class="close" onclick="closeModal('allAnimeModal')">&times;</span>
             <h2>Complete Anime List ({{ anime_count }})</h2>
-            <div id="allAnimeList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 20px;">
-                </div>
+            <div id="allAnimeList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 20px;"></div>
           </div>
         </div>
         
@@ -359,72 +528,65 @@ button.submit-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0
             <div class="guarantee-badge">
                 <img src="/static/logo.png" style="width: 14px; vertical-align: middle;"> 100% Happy Endings Guaranteed <img src="/static/logo.png" style="width: 14px; vertical-align: middle;">
             </div>
+            
             <h1>
                 <img src="/static/logo.png" style="width: 45px; vertical-align: middle;"> Romance Anime Suggester <img src="/static/logo.png" style="width: 45px; vertical-align: middle;">
             </h1>
-            <p>Select your mood and discover a wholesome romance anime.</p>
             
-           <form action="/suggest" method="get">
+            <p class="subtitle">Browse through <strong>{{ anime_count }}+</strong> hand-picked romance anime and discover your perfect happy ending.</p>
+            
+            <form action="/suggest" method="get" style="width: 100%; padding: 0 20px; box-sizing: border-box;">
+                
                 <div class="search-container">
-                 <input type="text" name="search" id="searchInput" class="search-input" placeholder="Search by name..." autocomplete="off">
+                    <i class="bi bi-search search-icon"></i>
+                    <input type="text" name="search" id="searchInput" class="search-input" placeholder="Enter an anime..." autocomplete="off">
                     <div id="autocomplete-list" class="select-items select-hide"></div>
                 </div>
-                <div class="custom-select">
-                    <select name="mood" id="mood-select">
-                        <option value="all">Any Romance</option>
-                        <option value="school">School Romance</option>
-                        <option value="comedy">Comedy Romance</option>
-                        <option value="fantasy">Fantasy Romance</option>
-                    </select>
+                
+                <div class="action-group">
+                    <div class="custom-select">
+                        <select name="mood" id="mood-select">
+                            <option value="all">Any Romance</option>
+                            <option value="school">School Romance</option>
+                            <option value="comedy">Comedy Romance</option>
+                            <option value="fantasy">Fantasy Romance</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Find &raquo;</button>
                 </div>
-                <br>
-                <button type="submit" class="submit-btn">Find an Anime &raquo;</button>
             </form>
             
-            <div class="stats-text">Currently searching through {{ anime_count }} hand-picked titles</div>
+            <div class="stats-text">Press <kbd class="shortcut">/</kbd> anywhere to quick-search</div>
             <p class="desktop-warning">For the best experience, please view this site on a laptop or desktop.</p>
         </div>
+
+        {% if trending_anime %}
+        <div class="trending-container">
+            <h3><i class="bi bi-fire" style="color: #ff9800;"></i> Trending Now</h3>
+            <div class="trending-grid">
+                {% for anime in trending_anime %}
+                <a href="/suggest?search={{ anime.title | urlencode }}" class="trending-card">
+                    <img src="{{ anime.get('img', '/static/placeholder.png') }}" alt="poster">
+                    <div class="trending-title">{{ anime.title }}</div>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
     </div>
 
     <script>
-        // Aggressive Mobile Detection - Defeats "Desktop Mode"
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            // Wait for the page to load
-            window.addEventListener('load', function() {
-                // Force the blocker to show
-                const blocker = document.getElementById('mobile-blocker');
-                if (blocker) {
-                    blocker.style.setProperty('display', 'flex', 'important');
-                    blocker.style.flexDirection = 'column';
-                    blocker.style.justifyContent = 'center';
-                    blocker.style.alignItems = 'center';
-                }
-                
-                // Forcefully delete the rest of the app from the screen
-                const elementsToHide = document.querySelectorAll('.sidebar, .main-content-wrapper, #splash-screen, .sakura');
-                elementsToHide.forEach(el => el.style.setProperty('display', 'none', 'important'));
-            });
-        }
-
         // Modal Scripts
-        function toggleMenu() { 
-    document.getElementById("myDropdown").classList.toggle("show"); 
-}
-
-function openModal(modalId) { document.getElementById("myDropdown").classList.remove("show"); document.getElementById(modalId).style.display = "block"; }
-
-function closeModal(modalId) { document.getElementById(modalId).style.display = "none"; }
+        function toggleMenu() { document.getElementById("myDropdown").classList.toggle("show"); }
+        function openModal(modalId) { document.getElementById("myDropdown").classList.remove("show"); document.getElementById(modalId).style.display = "block"; }
+        function closeModal(modalId) { document.getElementById(modalId).style.display = "none"; }
 
         function openHistoryModal() {
-            document.getElementById("myDropdown").classList.remove("show"); // Close kebab
             document.getElementById("historyModal").style.display = "block";
-            
             const historyList = document.getElementById("historyList");
             let history = JSON.parse(localStorage.getItem('animeHistory')) || [];
             
-            // EXTRA SAFEGUARD: Force the array to a maximum of 6 items immediately
             history = history.slice(0, 6);
-            
             if (history.length === 0) {
                 historyList.innerHTML = '<li style="color: #888; text-align: center;">No history yet</li>';
                 return;
@@ -434,7 +596,6 @@ function closeModal(modalId) { document.getElementById(modalId).style.display = 
             history.forEach(item => {
                 let title = typeof item === 'string' ? item : item.title;
                 let time = typeof item === 'string' ? 'Prior to update' : item.time;
-                
                 historyList.innerHTML += `
                     <li style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0, 229, 255, 0.2); padding: 12px 0;">
                         <a href="/suggest?search=${encodeURIComponent(title)}" style="color: white; text-decoration: none; font-size: 16px; transition: 0.2s;" onmouseover="this.style.color='#00e5ff'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">${title}</a>
@@ -443,39 +604,51 @@ function closeModal(modalId) { document.getElementById(modalId).style.display = 
             });
         }
 
-function openAllAnimeModal() {
-    // Close the kebab menu if it's open
-    document.getElementById("myDropdown").classList.remove("show"); 
-    
-    // Open the modal
-    document.getElementById("allAnimeModal").style.display = "block";
-    
-    const listContainer = document.getElementById("allAnimeList");
+        function openWishlistModal() {
+            const dropdown = document.getElementById("myDropdown");
+            if(dropdown) dropdown.classList.remove("show"); 
+            document.getElementById("wishlistModal").style.display = "block";
+            
+            const container = document.getElementById("wishlistContainer");
+            let wishlist = JSON.parse(localStorage.getItem('animeWishlist')) || [];
+            if (wishlist.length === 0) {
+                container.innerHTML = '<li style="color: #888; text-align: center;">Your wishlist is empty</li>';
+                return;
+            }
 
-    // Only populate the list once to save processing power
-    if (listContainer.innerHTML.trim() === "") {
-        // Sort titles alphabetically for easier browsing
-        const sortedTitles = [...animeTitles].sort();
-        
-        sortedTitles.forEach(title => {
-            listContainer.innerHTML += `
-                <a href="/suggest?search=${encodeURIComponent(title)}" 
-                   style="color: #cccccc; text-decoration: none; padding: 12px; 
-                          border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 8px; 
-                          background: rgba(0,0,0,0.4); transition: 0.2s; 
-                          font-size: 14px; text-align: center; display: flex; 
-                          align-items: center; justify-content: center; height: 100%; box-sizing: border-box;" 
-                   onmouseover="this.style.borderColor='#00e5ff'; this.style.color='#fff'; this.style.transform='scale(1.02)'" 
-                   onmouseout="this.style.borderColor='rgba(0, 229, 255, 0.2)'; this.style.color='#cccccc'; this.style.transform='scale(1)'">
-                    ${title}
-                </a>
-            `;
-        });
-    }
-}
+            container.innerHTML = '';
+            wishlist.forEach(title => {
+                container.innerHTML += `
+                    <li style="border-bottom: 1px solid rgba(255, 59, 59, 0.2); padding: 12px 0;">
+                        <a href="/suggest?search=${encodeURIComponent(title)}" style="color: white; text-decoration: none; font-size: 16px; transition: 0.2s;" onmouseover="this.style.color='#ff3b3b'; this.style.paddingLeft='10px'" onmouseout="this.style.color='white'; this.style.paddingLeft='0'">${title}</a>
+                    </li>`;
+            });
+        }
+
+        function openAllAnimeModal() {
+            document.getElementById("allAnimeModal").style.display = "block";
+            const listContainer = document.getElementById("allAnimeList");
+
+            if (listContainer.innerHTML.trim() === "") {
+                const sortedTitles = [...animeTitles].sort();
+                sortedTitles.forEach(title => {
+                    listContainer.innerHTML += `
+                        <a href="/suggest?search=${encodeURIComponent(title)}" 
+                           style="color: #cccccc; text-decoration: none; padding: 12px; 
+                                  border: 1px solid rgba(0, 229, 255, 0.2); border-radius: 8px; 
+                                  background: rgba(0,0,0,0.4); transition: 0.2s; 
+                                  font-size: 14px; text-align: center; display: flex; 
+                                  align-items: center; justify-content: center; height: 100%; box-sizing: border-box;" 
+                           onmouseover="this.style.borderColor='#00e5ff'; this.style.color='#fff'; this.style.transform='scale(1.02)'" 
+                           onmouseout="this.style.borderColor='rgba(0, 229, 255, 0.2)'; this.style.color='#cccccc'; this.style.transform='scale(1)'">
+                            ${title}
+                        </a>`;
+                });
+            }
+        }
 
         window.onclick = function(event) {
-            if (!event.target.matches('.kebab-icon')) {
+            if (!event.target.matches('.ri-more-2-fill')) {
                 var dropdowns = document.getElementsByClassName("dropdown-content");
                 for (var i = 0; i < dropdowns.length; i++) {
                     dropdowns[i].classList.remove('show');
@@ -564,6 +737,74 @@ function openAllAnimeModal() {
             if (e.target !== searchInput) { autoList.classList.add('select-hide'); }
             if (e.target !== selectedDiv) { optionsDiv.classList.add('select-hide'); }
         });
+        
+        // --- FEATURE C: Keyboard Shortcut Logic ---
+        document.addEventListener('keydown', function(event) {
+            // Check if '/' is pressed and user isn't already typing in an input
+            if (event.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+                event.preventDefault(); // Prevent '/' from being typed in the box
+                searchInput.focus();
+            }
+        });
     </script>
+    
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const localBackgrounds = [
+        "/static/backgrounds/A Sign of Affection.jpeg",
+        "/static/backgrounds/Chillin' in Another World.jpeg",
+        "/static/backgrounds/7th Time Loop.jpeg",
+        "/static/backgrounds/My Happy Marriage.jpeg",
+        "/static/backgrounds/Teasing Master Takagi-san.jpeg",
+        "/static/backgrounds/The Angel Next Door Spoils Me Rotten.jpeg",
+        "/static/backgrounds/Horimiya.jpeg",
+        "/static/backgrounds/Your Name.jpeg" 
+    ];
+
+    const bodyElement = document.body;
+
+    if (bodyElement) {
+        const randomBg = localBackgrounds[Math.floor(Math.random() * localBackgrounds.length)];
+        
+        bodyElement.style.backgroundImage = `
+            linear-gradient(
+                to bottom,
+                rgba(12, 16, 25, 0.75), 
+                rgba(8, 10, 15, 0.95)   
+            ), 
+            url("${randomBg}")
+        `;
+    }
+});
+</script>
+
+<script>
+    {% if not skip_splash %}
+    document.addEventListener("DOMContentLoaded", function() {
+        const container = document.getElementById('particle-container');
+        if (container) {
+            for (let i = 0; i < 35; i++) {
+                let p = document.createElement('div');
+                p.classList.add('particle');
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.width = Math.random() * 5 + 2 + 'px';
+                p.style.height = p.style.width;
+                p.style.animationDuration = Math.random() * 5 + 6 + 's';
+                p.style.animationDelay = Math.random() * 5 + 's';
+                
+                // Make 40% of the particles look like soft pink sakura petals
+                if (Math.random() > 0.6) {
+                    p.style.background = '#ffb7c5';
+                    p.style.borderRadius = '50% 0 50% 50%'; 
+                    p.style.boxShadow = '0 0 5px #ffb7c5';
+                } else {
+                    p.style.boxShadow = '0 0 5px white';
+                }
+                container.appendChild(p);
+            }
+        }
+    });
+    {% endif %}
+</script>
 </body>
 </html>
