@@ -1,25 +1,38 @@
 [
     {
-    "title": "Toradora!",
-    "genre": ["comedy", "romance", "slice of life", "school"],
-    "rating": "8.09/10",
-    "audio": "Eng / Jap",
-    "desc": "Two misunderstood high school students form an unlikely alliance to help each other win over their respective crushes, only to inevitably fall in love with one another, culminating in a dramatic runaway and a secret engagement.",
-    "wiki": "Ryuji Takasu is a gentle guy cursed with an intimidating glare, while Taiga Aisaka is a tiny, fiery girl known as the 'Palmtop Tiger'. After discovering they have crushes on each other's best friends, Yusaku Kitamura and Minori Kushieda, they make a pact to help one another out. As they spend more time together plotting, sharing meals, and bickering, their alliance slowly blossoms into a genuine, heartfelt romance. Later in the story, during a school ski trip, a delirious Taiga accidentally confesses her true feelings for Ryuji to him. After their mutual friends force them to confront their reality, Ryuji and Taiga decide to elope to escape their complicated family situations, sharing a kiss and promising to marry each other. Although Taiga temporarily leaves to resolve her relationship with her estranged mother, the series concludes with a happy ending where she returns for their high school graduation and the two happily reunite.",
-    "img": "/static/Toradora!.jpeg"
-   },
+        "title": "Toradora!",
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life",
+            "school"
+        ],
+        "rating": "8.09/10",
+        "audio": "Eng / Jap",
+        "desc": "Two misunderstood high school students form an unlikely alliance to help each other win over their respective crushes, only to inevitably fall in love with one another, culminating in a dramatic runaway and a secret engagement.",
+        "wiki": "Ryuji Takasu is a gentle guy cursed with an intimidating glare, while Taiga Aisaka is a tiny, fiery girl known as the 'Palmtop Tiger'. After discovering they have crushes on each other's best friends, Yusaku Kitamura and Minori Kushieda, they make a pact to help one another out. As they spend more time together plotting, sharing meals, and bickering, their alliance slowly blossoms into a genuine, heartfelt romance. Later in the story, during a school ski trip, a delirious Taiga accidentally confesses her true feelings for Ryuji to him. After their mutual friends force them to confront their reality, Ryuji and Taiga decide to elope to escape their complicated family situations, sharing a kiss and promising to marry each other. Although Taiga temporarily leaves to resolve her relationship with her estranged mother, the series concludes with a happy ending where she returns for their high school graduation and the two happily reunite.",
+        "img": "/static/Toradora!.jpeg"
+    },
     {
-    "title": "Maid Sama!",
-    "genre": ["romance", "comedy", "school"],
-    "rating": "8.00/10",
-    "audio": "Eng / Jap",
-    "desc": "A strict student council president hides her secret part-time job at a maid café from her peers, until the school's most popular boy finds out, leading to a teasing dynamic that ultimately blossoms into a devoted relationship.",
-    "wiki": "Misaki Ayuzawa is a fierce, boy-hating student council president who secretly works at a maid café to support her impoverished family. When Takumi Usui, the enigmatic and highly popular boy in school, discovers her secret, he chooses to keep it and instead becomes a regular at her café. What starts as him teasing her develops into a fiercely protective and highly competitive romance. Throughout the story, Usui constantly comes to Misaki's rescue, and it is eventually revealed that he has a complicated past as the illegitimate son of a wealthy British noble family. The series builds to a climax where they finally admit their mutual feelings and officially become a couple, concluding with a happy ending where they remain together and eventually marry years later.",
-    "img": "/static/Kaichou wa Maid-sama!.jpeg"
-   },
+        "title": "Maid Sama!",
+        "genre": [
+            "romance",
+            "comedy",
+            "school"
+        ],
+        "rating": "8.00/10",
+        "audio": "Eng / Jap",
+        "desc": "A strict student council president hides her secret part-time job at a maid café from her peers, until the school's most popular boy finds out, leading to a teasing dynamic that ultimately blossoms into a devoted relationship.",
+        "wiki": "Misaki Ayuzawa is a fierce, boy-hating student council president who secretly works at a maid café to support her impoverished family. When Takumi Usui, the enigmatic and highly popular boy in school, discovers her secret, he chooses to keep it and instead becomes a regular at her café. What starts as him teasing her develops into a fiercely protective and highly competitive romance. Throughout the story, Usui constantly comes to Misaki's rescue, and it is eventually revealed that he has a complicated past as the illegitimate son of a wealthy British noble family. The series builds to a climax where they finally admit their mutual feelings and officially become a couple, concluding with a happy ending where they remain together and eventually marry years later.",
+        "img": "/static/Kaichou wa Maid-sama!.jpeg"
+    },
     {
         "title": "Kimi ni Todoke: From Me to You",
-        "genre": ["romance", "slice of life", "drama"],
+        "genre": [
+            "romance",
+            "slice of life",
+            "drama"
+        ],
         "rating": "8.00/10",
         "audio": "Japanese/English",
         "desc": "A misunderstood girl who looks like a horror movie character falls for the most popular boy in school, eventually overcoming her social anxiety to confess her feelings and start a sweet, official relationship with him.",
@@ -28,7 +41,11 @@
     },
     {
         "title": "Golden Time",
-        "genre": ["comedy", "romance", "drama"],
+        "genre": [
+            "comedy",
+            "romance",
+            "drama"
+        ],
         "rating": "7.76/10",
         "audio": "Japanese/English",
         "desc": "A college student with amnesia falls in love with an eccentric girl, but their relationship is severely tested as his past memories slowly return, culminating in him accepting both versions of himself to secure a happy future with her.",
@@ -37,7 +54,10 @@
     },
     {
         "title": "Lovely Complex",
-        "genre": ["comedy", "romance"],
+        "genre": [
+            "comedy",
+            "romance"
+        ],
         "rating": "8.03/10",
         "audio": "Japanese",
         "desc": "A tall girl and a short boy struggle with their feelings and societal expectations regarding their height difference, eventually overcoming their insecurities to become an official, loving couple.",
@@ -46,7 +66,12 @@
     },
     {
         "title": "Horimiya",
-        "genre": ["comedy", "romance", "slice of life", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life",
+            "school"
+        ],
         "rating": "8.19/10",
         "audio": "Eng / Jap",
         "desc": "A popular girl and a gloomy boy discover each other's hidden true selves, sparking a fast-paced and genuine romance that culminates in a heartfelt marriage proposal.",
@@ -55,7 +80,11 @@
     },
     {
         "title": "Wotakoi: Love is Hard for Otaku",
-        "genre": ["comedy", "romance", "slice of life"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.92/10",
         "audio": "Eng / Jap",
         "desc": "Childhood friends reunite as office workers and start dating, navigating the comedic challenges of balancing their adult responsibilities with their hardcore otaku lifestyles to build a supportive, lasting relationship.",
@@ -64,7 +93,11 @@
     },
     {
         "title": "My Love Story!!",
-        "genre": ["comedy", "romance", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school"
+        ],
         "rating": "7.90/10",
         "audio": "Japanese/English",
         "desc": "A giant, intimidating boy with a heart of gold falls in love with a tiny, sweet girl, leading to an incredibly wholesome and drama-free relationship where they continually prove their devotion to one another.",
@@ -73,7 +106,11 @@
     },
     {
         "title": "Tonikawa: Over The Moon For You",
-        "genre": ["comedy", "romance", "slice of life"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.88/10",
         "audio": "Japanese/English",
         "desc": "A brilliant boy marries a mysterious girl who saved his life, diving headfirst into a sweet and domestic newlywed life filled with endless joyful moments and unconditional love.",
@@ -82,7 +119,12 @@
     },
     {
         "title": "Kaguya-sama: Love Is War",
-        "genre": ["comedy", "romance", "school", "slice of life"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school",
+            "slice of life"
+        ],
         "rating": "8.40/10",
         "audio": "Eng / Jap",
         "desc": "Two brilliant student council leaders turn their mutual crushes into a hilarious psychological battlefield, but eventually drop their pride to confess and build a genuinely supportive, loving relationship.",
@@ -91,7 +133,11 @@
     },
     {
         "title": "Snow White with the Red Hair",
-        "genre": ["fantasy", "romance", "drama"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "drama"
+        ],
         "rating": "7.74/10",
         "audio": "Eng / Jap",
         "desc": "A determined herbalist girl flees her home and meets a prince, leading to a beautifully mature romance where they mutually support each other's royal and professional ambitions.",
@@ -100,7 +146,11 @@
     },
     {
         "title": "Kamisama Kiss",
-        "genre": ["comedy", "fantasy", "romance"],
+        "genre": [
+            "comedy",
+            "fantasy",
+            "romance"
+        ],
         "rating": "8.05/10",
         "audio": "Japanese/English",
         "desc": "A homeless girl accidentally becomes a local Land God and falls in love with her grumpy fox familiar, embarking on a magical journey that transcends time to save him and secure their future.",
@@ -109,7 +159,11 @@
     },
     {
         "title": "Spice and Wolf",
-        "genre": ["adventure", "fantasy", "romance"],
+        "genre": [
+            "adventure",
+            "fantasy",
+            "romance"
+        ],
         "rating": "8.21/10",
         "audio": "Japanese/English",
         "desc": "A traveling merchant and a wise wolf deity form a partnership that slowly blossoms into a profound romance, ultimately choosing a quiet, loving life together over endless wandering.",
@@ -118,7 +172,11 @@
     },
     {
         "title": "Banished from the Hero's Party, I Decided to Live a Quiet Life in the Countryside",
-        "genre": ["fantasy", "romance", "slice of life"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.15/10",
         "audio": "Eng / Jap",
         "desc": "A former adventurer opens an apothecary in a frontier town and reunites with an old ally, quickly sparking a deeply affectionate and domestic romance that proves peaceful life is the ultimate reward.",
@@ -127,115 +185,169 @@
     },
     {
         "title": "The Saint's Magic Power is Omnipotent",
-        "genre": ["fantasy", "romance", "slice of life"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.38/10",
         "audio": "Japanese/English",
         "desc": "A summoned office worker becomes a magical researcher and falls for a knight, eventually embracing her powers to save him and solidifying their romantic bond.",
         "wiki": "Sei is summoned to another world as a Saint but is initially ignored. She starts making abnormally effective potions and catches the eye of Knight Commander Albert Hawke. As their relationship deepens, Sei realizes her magical power is directly tied to her feelings of love for Albert. The story reaches a joyful climax when Sei fully accepts her role and her love, using her omnipotent saintly magic to eradicate a major monster threat and save Albert, leading to a happy continuation of their official romantic relationship.",
-        "img": "/static/The Saint's Magic Power is Omnipotent"
+        "img": "/static/The Saint's Magic Power is Omnipotent.jpeg"
     },
     {
         "title": "I'm the Villainess, So I'm Taming the Final Boss",
-        "genre": ["comedy", "fantasy", "romance"],
+        "genre": [
+            "comedy",
+            "fantasy",
+            "romance"
+        ],
         "rating": "7.52/10",
         "audio": "Japanese/English",
         "desc": "To avoid a tragic fate, a reincarnated villainess successfully romances the Demon King, averting disaster and securing a triumphant, happy marriage.",
         "wiki": "Aileen suddenly remembers she has been reincarnated as the villainess in an otome game. To prevent her destined gruesome death, she boldly proposes to the game's final boss, Demon King Claude. Through her genuine efforts to help him and his demonic subjects, Claude falls deeply in love with her. Aileen successfully thwarts the game's original heroine (who turns out to be malicious), saves Claude from turning into a mindless monster, and secures a definitive happy ending by marrying him and becoming the Demon Empress.",
-        "img": "/static/I'm the Villainess, So I'm Taming the Final Boss"
+        "img": "/static/I'm the Villainess, So I'm Taming the Final Boss.jpeg"
     },
     {
         "title": "7th Time Loop",
-        "genre": ["fantasy", "romance", "drama"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "drama"
+        ],
         "rating": "7.77/10",
         "audio": "Japanese/English",
         "desc": "A noblewoman marries the prince who killed her in previous lives, using her accumulated skills to prevent a devastating war and build a loving partnership.",
         "wiki": "Rishe has lived six different lives, each ending in a tragic death at age 20 due to a world war initiated by Emperor Arnold Hein. In her seventh loop, she unexpectedly receives a marriage proposal from a younger Arnold. Accepting the proposal to keep a close eye on him, Rishe uses the vast array of skills she learned in her past lives to subtly alter the political landscape and prevent the impending tragedy. Along the way, Arnold becomes genuinely captivated by her brilliance, and they develop a profound mutual respect and romantic bond, steering their future toward a peaceful and happy resolution.",
-        "img": "/static/7th Time Loop"
+        "img": "/static/7th Time Loop.jpeg"
     },
     {
         "title": "Why Raeliana Ended Up at the Duke's Mansion",
-        "genre": ["fantasy", "romance", "mystery"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "mystery"
+        ],
         "rating": "7.60/10",
         "audio": "Japanese/English",
         "desc": "A reincarnated girl makes a survival pact with a cunning duke, leading to a genuine romance where they overcome deadly political plots to marry and live happily.",
         "wiki": "Rinkoha reincarnates into a novel as Raeliana McMillan, a minor character destined to be poisoned by her fiancé. To survive, she blackmails the powerful, two-faced Duke Noah Wynknight into a fake engagement. While they initially use each other to fend off political enemies, they slowly fall in love. Raeliana discovers that the novel's original protagonist, Beatrice, is the true villain trying to steal her fate. With Noah's unwavering support, Raeliana defeats Beatrice. The story concludes with a highly satisfying happy ending where Noah formally proposes, and they marry, finally free from the novel's predetermined tragic plot.",
-        "img": "/static/Why Raeliana Ended Up at the Duke's Mansion"
+        "img": "/static/Why Raeliana Ended Up at the Duke's Mansion.jpeg"
     },
     {
         "title": "My Happy Marriage",
-        "genre": ["fantasy", "romance", "drama"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "drama"
+        ],
         "rating": "8.06/10",
         "audio": "Japanese/English",
         "desc": "An abused, seemingly powerless daughter is married off to a fearsome commander, only to find a deeply loving partner who helps her unlock her true, formidable abilities.",
         "wiki": "Miyo Saimori is treated like a servant by her abusive family for lacking supernatural abilities. She is married off to Kiyoka Kudou, a military commander rumored to be incredibly cruel. However, Kiyoka turns out to be kind and fiercely protective. He quickly realizes the abuse she suffered and begins to help her heal. It is eventually revealed that Miyo actually possesses the incredibly rare and powerful Dream Sight ability, which her mother sealed away to protect her. Together, they confront and defeat Miyo's abusive family and other supernatural threats, officially becoming engaged and cementing a deeply heartwarming, happy ending.",
-        "img": "/static/My Happy Marriage"
+        "img": "/static/My Happy Marriage.jpeg"
     },
     {
         "title": "Tsuki ga Kirei",
-        "genre": ["romance", "slice of life", "school"],
+        "genre": [
+            "romance",
+            "slice of life",
+            "school"
+        ],
         "rating": "8.12/10",
         "audio": "Japanese/English",
         "desc": "Two middle schoolers navigate the awkwardness of first love, maintaining a long-distance relationship through high school that culminates in a happy marriage and a child.",
         "wiki": "Middle schoolers Kotaro and Akane end up in the same class and slowly grow closer through LINE messages, navigating the intense awkwardness and beauty of innocent young romance. When Akane is forced to move away for high school, they decide to try a long-distance relationship. The series is celebrated for its incredibly realistic depiction of adolescent love, avoiding overly dramatic tropes. In a definitive and deeply rewarding happy ending, the post-credits sequence reveals through a series of LINE messages and photos that they successfully stayed together through high school and college, eventually getting married and having a child together.",
-        "img": "/static/Tsuki ga Kirei"
+        "img": "/static/Tsuki ga Kirei.jpeg"
     },
     {
         "title": "The Angel Next Door Spoils Me Rotten",
-        "genre": ["comedy", "romance", "slice of life", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life",
+            "school"
+        ],
         "rating": "7.84/10",
         "audio": "Eng / Jap",
         "desc": "A neighborly act of kindness leads to a sweet domestic romance where two lonely teenagers heal each other and officially become a deeply affectionate couple.",
         "wiki": "After Amane lends his umbrella to Mahiru, the most beautiful and popular girl in school, she repays him by cleaning his messy apartment and cooking for him. What starts as a simple favor becomes a daily routine. Amane discovers that despite her 'angelic' persona at school, Mahiru is deeply lonely and estranged from her parents. By offering her a genuine, safe space and unconditional care, Amane melts her emotional barriers. The incredibly sweet and wholesome story progresses past their mutual denial, ending with a highly satisfying conclusion where they openly confess their feelings and officially start dating, no longer hiding their relationship from their peers.",
-        "img": "/static/The Angel Next Door Spoils Me Rotten"
+        "img": "/static/The Angel Next Door Spoils Me Rotten.jpeg"
     },
     {
         "title": "A Sign of Affection",
-        "genre": ["romance", "slice of life", "school"],
+        "genre": [
+            "romance",
+            "slice of life",
+            "school"
+        ],
         "rating": "8.31/10",
         "audio": "Japanese/English",
         "desc": "A deaf college student falls for a multilingual upperclassman who eagerly learns her world, resulting in an incredibly healthy and communicative official relationship.",
         "wiki": "Yuki is a deaf college student whose sheltered world dramatically expands when she meets Itsuomi, a multilingual upperclassman with a passion for traveling. Instead of pitying her, Itsuomi is fascinated by her and immediately begins learning Japanese Sign Language so they can communicate directly. The series is lauded for its exceptionally healthy, drama-free approach to romance. They confess their feelings and officially become a couple quite early on. The story continues to follow their blossoming relationship as they meet each other's families, plan for a shared future, and maintain a joyful, supportive partnership with a guaranteed happy trajectory.",
-        "img": "/static/A Sign of Affection"
+        "img": "/static/A Sign of Affection.jpeg"
     },
     {
         "title": "The Dangers in My Heart",
-        "genre": ["comedy", "romance", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school"
+        ],
         "rating": "8.25/10",
         "audio": "Japanese/English",
         "desc": "A boy who pretends to be an edgy loner falls for a quirky, popular girl, overcoming his insecurities to confess his feelings and start a wonderfully wholesome relationship.",
         "wiki": "Kyotaro Ichikawa reads murder encyclopedias and pretends to be a dark sociopath, fantasizing about killing the school's most popular girl, Anna Yamada. However, he quickly realizes she is actually a clumsy, food-obsessed airhead, and he begins secretly protecting her and helping her out. His 'murderous' urges are revealed to just be a massive, awkward crush. Over time, Yamada also falls deeply in love with Ichikawa's quiet kindness. They both grow immensely, with Ichikawa shedding his edgy persona and gaining self-confidence. The story reaches a highly satisfying milestone when they mutually confess their love and officially become an incredibly supportive, happy couple.",
-        "img": "/static/The Dangers in My Heart"
+        "img": "/static/The Dangers in My Heart.jpeg"
     },
     {
         "title": "Shikimori's Not Just a Cutie",
-        "genre": ["comedy", "romance", "slice of life"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "6.87/10",
         "audio": "Japanese/English",
         "desc": "A chronically unlucky boy enjoys a loving, established relationship with his cool, protective girlfriend, showcasing endless sweet moments and a happy, drama-free dynamic.",
         "wiki": "Izumi is a kind-hearted boy cursed with incredibly bad luck, constantly getting into minor accidents. However, his life is wonderful because he is already dating Shikimori. While she appears to be a standard cute, sweet girlfriend, she instantly transforms into a cool, sharp-eyed action hero whenever Izumi is in danger. Unlike many romances that focus on getting together, this series explores an already established couple. It completely avoids stressful drama and love triangles, opting instead to showcase their deep mutual devotion, constant communication, and a continuous stream of happily-ever-after moments throughout their high school lives.",
-        "img": "/static/Shikimori's Not Just a Cutie"
+        "img": "/static/Shikimori's Not Just a Cutie.jpeg"
     },
     {
         "title": "Kubo Won't Let Me Be Invisible",
-        "genre": ["comedy", "romance", "slice of life"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.52/10",
         "audio": "Japanese/English",
         "desc": "A practically invisible boy slowly comes out of his shell thanks to the playful affection of the only girl who notices him, eventually leading to a mutual confession.",
         "wiki": "Junta Shiraishi is a high schooler with such a severe lack of presence that people often assume his desk is empty. The only exception is his classmate Nagisa Kubo, who always spots him immediately. She playfully teases him, encouraging him to participate in class and making him experience a normal youth. As they spend time together, Kubo's teasing is revealed to be rooted in a deep crush, and Shiraishi slowly realizes his own romantic feelings for her while gaining the confidence to be seen by others. The story builds to a deeply heartwarming climax where Shiraishi finally confesses his love during a school trip, and Kubo happily accepts, cementing their happy ending.",
-        "img": "/static/Kubo Won't Let Me Be Invisible"
+        "img": "/static/Kubo Won't Let Me Be Invisible.jpeg"
     },
     {
         "title": "Teasing Master Takagi-san",
-        "genre": ["comedy", "romance", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school"
+        ],
         "rating": "7.94/10",
         "audio": "Eng / Jap",
         "desc": "A middle school boy constantly fails to outsmart the girl who teases him, a dynamic that ultimately blossoms into a happy marriage and a shared family life.",
         "wiki": "Middle schooler Nishikata is constantly teased by his desk neighbor, Takagi. He devises daily plans to get back at her and make her blush, but Takagi—who is secretly harboring a massive crush on him—always reads his mind and turns the tables, usually leaving him flustered. The series is a masterclass in innocent, slow-burn romantic comedy. The guarantee of their happy ending is actually baked into the franchise itself: the spin-off sequel series, 'Karakai Jouzu no (Moto) Takagi-san,' shows them as happily married adults living together with their adorable daughter, Chi, confirming that their wholesome childhood bond lasted a lifetime.",
-        "img": "/static/Teasing Master Takagi-san"
+        "img": "/static/Teasing Master Takagi-san.jpeg"
     },
     {
         "title": "Fruits Basket (2019)",
-        "genre": ["comedy", "drama", "romance", "supernatural"],
+        "genre": [
+            "comedy",
+            "drama",
+            "romance",
+            "supernatural"
+        ],
         "rating": "8.22/10",
         "audio": "Japanese/English",
         "desc": "A kind-hearted girl moves in with a family cursed to turn into zodiac animals, ultimately breaking their ancient curse and finding a lifelong romance.",
@@ -244,7 +356,11 @@
     },
     {
         "title": "Oregairu",
-        "genre": ["comedy", "drama", "romance"],
+        "genre": [
+            "comedy",
+            "drama",
+            "romance"
+        ],
         "rating": "8.01/10",
         "audio": "Japanese/English",
         "desc": "A cynical loner is forced to join a club that helps students, navigating complex social dynamics and a love triangle to finally find a genuine romantic connection.",
@@ -253,7 +369,12 @@
     },
     {
         "title": "Rascal Does Not Dream of Bunny Girl Senpai",
-        "genre": ["drama", "romance", "supernatural", "school"],
+        "genre": [
+            "drama",
+            "romance",
+            "supernatural",
+            "school"
+        ],
         "rating": "8.23/10",
         "audio": "Japanese/English",
         "desc": "A boy helps various girls suffering from supernatural phenomena, forming an unbreakable bond and a committed relationship with his upperclassman.",
@@ -262,7 +383,11 @@
     },
     {
         "title": "Kokoro Connect",
-        "genre": ["drama", "romance", "supernatural"],
+        "genre": [
+            "drama",
+            "romance",
+            "supernatural"
+        ],
         "rating": "7.73/10",
         "audio": "Japanese/English",
         "desc": "Five club members experience body-swapping and other supernatural phenomena that force them to confront their traumas, leading to a strong romantic conclusion.",
@@ -271,7 +396,11 @@
     },
     {
         "title": "Just Because!",
-        "genre": ["drama", "romance", "slice of life"],
+        "genre": [
+            "drama",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.28/10",
         "audio": "Japanese/English",
         "desc": "A transfer student reunites with his middle school friends in their final semester, sparking a realistic high school romance that ends in a mutual confession.",
@@ -280,7 +409,11 @@
     },
     {
         "title": "Tada Never Falls in Love",
-        "genre": ["comedy", "romance", "drama"],
+        "genre": [
+            "comedy",
+            "romance",
+            "drama"
+        ],
         "rating": "7.31/10",
         "audio": "Japanese/English",
         "desc": "An aspiring photographer meets a foreign princess in Japan, overcoming the massive hurdle of her royal obligations to secure a surprisingly happy future together.",
@@ -289,7 +422,11 @@
     },
     {
         "title": "3D Kanojo: Real Girl",
-        "genre": ["comedy", "romance", "drama"],
+        "genre": [
+            "comedy",
+            "romance",
+            "drama"
+        ],
         "rating": "7.24/10",
         "audio": "Japanese/English",
         "desc": "An otaku boy starts dating the beautiful, misunderstood girl in school, overcoming medical tragedy to ultimately marry her years later.",
@@ -298,7 +435,12 @@
     },
     {
         "title": "Itazura na Kiss",
-        "genre": ["comedy", "romance", "drama", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "drama",
+            "school"
+        ],
         "rating": "7.45/10",
         "audio": "Japanese/English",
         "desc": "A clumsy girl is forced to live with the genius boy who rejected her, slowly winning his heart over years of dedication that lead to marriage and a family.",
@@ -307,7 +449,12 @@
     },
     {
         "title": "The Quintessential Quintuplets",
-        "genre": ["comedy", "romance", "harem", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "harem",
+            "school"
+        ],
         "rating": "7.66/10",
         "audio": "Japanese/English",
         "desc": "A poor student becomes a tutor for five identical sisters, solving the mystery of his future bride in a heartwarming, definitive romantic conclusion.",
@@ -316,241 +463,351 @@
     },
     {
         "title": "Saekano: How to Raise a Boring Girlfriend",
-        "genre": ["comedy", "romance", "drama"],
+        "genre": [
+            "comedy",
+            "romance",
+            "drama"
+        ],
         "rating": "7.52/10",
         "audio": "Japanese/English",
         "desc": "An otaku recruits girls to help him create a dating sim game, ultimately realizing his 'boring' classmate was his true heroine all along, leading to a heartfelt confession and life together.",
         "wiki": "Tomoya Aki wants to make a visual novel using his incredibly ordinary classmate Megumi Kato as the main heroine, pulling together a team of talented but eccentric creators like Eriri and Utaha. Throughout the development of their game, the group faces creative differences and emotional hurdles. While the other girls harbor feelings for him, Tomoya eventually realizes that Megumi has been his greatest supporter and true love. In the concluding movie, Tomoya officially confesses to Megumi. The story ends with a beautiful flash-forward showing them as adults, running a successful company together and living in a happy, committed relationship.",
-        "img": "/static/Saekano: How to Raise a Boring Girlfriend"
+        "img": "/static/Saekano: How to Raise a Boring Girlfriend.jpeg"
     },
     {
         "title": "Yamada-kun and the Seven Witches",
-        "genre": ["comedy", "romance", "supernatural"],
+        "genre": [
+            "comedy",
+            "romance",
+            "supernatural"
+        ],
         "rating": "7.59/10",
         "audio": "Japanese/English",
         "desc": "A delinquent discovers he can swap bodies by kissing, sparking a supernatural mystery that leads to a profound romance, a heartfelt proposal, and a happy marriage.",
         "wiki": "Ryu Yamada accidentally kisses top student Urara Shiraishi and discovers they can swap bodies. They revive the Supernatural Studies Club to uncover the identities of the seven school witches whose powers are activated by kissing. Through their trials, including dealing with memory manipulation and school politics, Yamada and Shiraishi fall deeply in love. Yamada eventually succeeds in erasing the witch powers from the school to protect his friends. The story guarantees a happy ending, concluding with Yamada and Shiraishi getting married and a flash-forward showing them happily raising their children.",
-        "img": "/static/Yamada-kun and the Seven Witches"
+        "img": "/static/Yamada-kun and the Seven Witches.jpeg"
     },
     {
         "title": "Boarding School Juliet",
-        "genre": ["comedy", "romance", "action"],
+        "genre": [
+            "comedy",
+            "romance",
+            "action"
+        ],
         "rating": "7.49/10",
         "audio": "Japanese/English",
         "desc": "The leaders of two rival dormitories navigate a secret, forbidden romance, eventually changing their school's prejudiced society to openly celebrate their beautiful wedding.",
         "wiki": "Romio Inuzuka and Juliet Persia lead opposing factions, the Black Doggies and White Cats, at Dahlia Academy. Despite the bitter rivalry, Romio confesses his love to Juliet, and she accepts. They must keep their blossoming romance a total secret to avoid an all-out war between the students. However, their unwavering dedication to each other inspires them to change the academy's toxic culture. They eventually reveal their relationship to the world and successfully bridge the gap between their nations. The series finishes with a highly satisfying happy ending, culminating in Romio and Juliet's beautiful wedding ceremony surrounded by their friends.",
-        "img": "/static/Boarding School Juliet"
+        "img": "/static/Boarding School Juliet.jpeg"
     },
     {
         "title": "Chivalry of a Failed Knight",
-        "genre": ["action", "fantasy", "romance"],
+        "genre": [
+            "action",
+            "fantasy",
+            "romance"
+        ],
         "rating": "7.40/10",
         "audio": "Japanese/English",
         "desc": "The worst student at a magic knight academy is challenged by a genius princess, forming a powerful partnership that culminates in an epic public proposal and engagement.",
         "wiki": "Ikki Kurogane is labeled a 'failed knight' due to his low magical power, but he possesses incredible physical skills. He is challenged to a duel by Stella Vermillion, a genius princess, and defeats her. They become roommates and partners, aiming for the top of the magical tournament. Unlike many action shows, they confess their feelings and officially start dating early on. The climax of the anime features Ikki overcoming severe physical and political trials to win his tournament match, immediately followed by him proposing to Stella in front of the entire stadium. She joyfully accepts, securing their happy future.",
-        "img": "/static/Chivalry of a Failed Knight"
+        "img": "/static/Chivalry of a Failed Knight.jpeg"
     },
     {
         "title": "Sword Art Online",
-        "genre": ["action", "fantasy", "romance"],
+        "genre": [
+            "action",
+            "fantasy",
+            "romance"
+        ],
         "rating": "7.20/10",
         "audio": "Japanese/English",
         "desc": "Players trapped in a deadly virtual reality game find solace in each other, forging an unbreakable romantic bond that transcends the digital world into a devoted real-life relationship.",
         "wiki": "Kirito and Asuna are trapped in Aincrad, a VR MMORPG where dying in the game means dying in real life. Amidst the trauma and battles, they fall deeply in love, get married in-game, and adopt an AI daughter named Yui. Their romance becomes the core anchor for their survival. After Kirito clears the death game, he discovers Asuna is trapped in a new game, ALO, and fights to rescue her. The series repeatedly affirms their unshakeable loyalty to one another, firmly establishing them as a happy, devoted couple in the real world who continuously overcome adversity side-by-side.",
-        "img": "/static/Sword Art Online"
+        "img": "/static/Sword Art Online.jpeg"
     },
     {
         "title": "The Familiar of Zero",
-        "genre": ["comedy", "fantasy", "romance"],
+        "genre": [
+            "comedy",
+            "fantasy",
+            "romance"
+        ],
         "rating": "7.21/10",
         "audio": "Japanese/English",
         "desc": "A terrible mage summons a human boy as her familiar, kicking off an epic adventure that transforms their constant bickering into a profound love and a cross-dimensional marriage.",
         "wiki": "Louise the Zero, mocked for her terrible magic skills, accidentally summons a normal human boy, Saito Hiraga, from Earth. Bound by a familiar's contract, they initially bicker constantly. However, Saito gains the ability to instantly master any weapon to protect her. Through surviving massive wars and political upheaval, their bond deepens into a fierce, protective love. The story concludes with the ultimate happy ending: Saito and Louise finally get legally married, and Saito uses a portal to bring his new wife back to modern-day Japan to introduce her to his parents.",
-        "img": "/static/The Familiar of Zero"
+        "img": "/static/The Familiar of Zero.jpeg"
     },
     {
         "title": "Shakugan no Shana",
-        "genre": ["action", "fantasy", "romance"],
+        "genre": [
+            "action",
+            "fantasy",
+            "romance"
+        ],
         "rating": "7.44/10",
         "audio": "Japanese/English",
         "desc": "A boy discovers he is dead and joins forces with a fiery supernatural warrior, evolving from a simple torch into a powerful entity to secure a peaceful universe where they can be together.",
         "wiki": "Yuji Sakai discovers he is a 'Torch', a temporary remnant of a consumed human soul. He is saved by Shana, a fiery Flame Haze warrior. As they fight monsters together, Yuji refuses to fade away and they develop a deep romantic bond. In a massive plot twist in the final season, Yuji aligns with the enemy, becoming the Snake of the Festival, to create a new universe (Xanadu) where Flame Hazes and monsters no longer have to fight. After an epic final battle, Yuji and Shana reconcile, confess their eternal love for one another, and journey to the new world together, securing a definitive happy ending.",
-        "img": "/static/Shakugan no Shana"
+        "img": "/static/Shakugan no Shana.jpeg"
     },
     {
         "title": "Record of Grancrest War",
-        "genre": ["action", "fantasy", "romance"],
+        "genre": [
+            "action",
+            "fantasy",
+            "romance"
+        ],
         "rating": "7.15/10",
         "audio": "Japanese/English",
         "desc": "A lone knight and a brilliant mage form a contract to unify a fractured continent, successfully achieving world peace and retiring to a happy, married life in the countryside.",
         "wiki": "Theo Cornaro, a wandering knight, and Siluca Meletes, a genius mage, form a magical contract with the ambitious goal of ending the chaotic wars across the land. As they build an army and outmaneuver rival lords, their professional partnership quickly evolves into a steadfast and deeply affectionate romance. They rely on each other implicitly. After achieving the impossible—unifying the continent and obtaining the Grancrest—Theo becomes the Emperor. However, he soon abdicates the throne to return to his peaceful homeland with Siluca, where the series ends with their beautiful wedding and a happily-ever-after.",
-        "img": "/static/Record of Grancrest War"
+        "img": "/static/Record of Grancrest War.jpeg"
     },
     {
         "title": "Maoyu ~ Archenemy & Hero",
-        "genre": ["fantasy", "romance", "economics"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "economics"
+        ],
         "rating": "7.21/10",
         "audio": "Japanese/English",
         "desc": "The Hero joins forces with the Demon King to solve the world's economic issues, forging an incredible partnership and a loving relationship that changes the world for the better.",
         "wiki": "Instead of fighting, the Hero and the Demon Queen sit down and realize that simply ending their war would cause economic collapse for both humans and demons. They forge a secret pact, teaming up to introduce new agricultural methods, economics, and education to advance society. The Hero fiercely protects the Demon Queen, and their mutual respect blossoms into a deep, unspoken love. They overcome political sabotage and religious persecution together. The story concludes on a hopeful and happy note, with the two of them walking away from the battlefield hand-in-hand to continue guiding the world from the shadows.",
-        "img": "/static/Maoyu ~ Archenemy & Hero"
+        "img": "/static/Maoyu ~ Archenemy & Hero.jpeg"
     },
     {
         "title": "Special A",
-        "genre": ["comedy", "romance", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school"
+        ],
         "rating": "7.39/10",
         "audio": "Japanese/English",
         "desc": "A dense girl strives to beat her lifelong academic rival, eventually realizing he is desperately in love with her, leading to a globetrotting confession and a sweet relationship.",
         "wiki": "Hikari Hanazono has spent her life trying to defeat Kei Takishima, who always bests her and calls her 'Miss Rank Two'. She treats him as a fierce rival, completely oblivious to the fact that Kei is deeply, obviously, and passionately in love with her. Throughout the series, Kei quietly protects and supports her. When Kei is forced to transfer to a school in London due to family obligations, Hikari finally realizes her own romantic feelings. She flies across the world to confront him, leading to a highly satisfying happy ending where they finally share a mutual confession, a kiss, and officially become a couple.",
-        "img": "/static/Special A"
+        "img": "/static/Special A.jpeg"
     },
     {
         "title": "Ouran High School Host Club",
-        "genre": ["comedy", "romance", "reverse harem"],
+        "genre": [
+            "comedy",
+            "romance",
+            "reverse harem"
+        ],
         "rating": "8.16/10",
         "audio": "Japanese/English",
         "desc": "A poor girl working as a host at an elite school slowly breaks through the dramatic antics of the club president, leading to a deeply genuine romance and an eventual happy marriage.",
         "wiki": "Haruhi Fujioka is mistaken for a boy and joins the Host Club to pay off her debt. The club president, Tamaki Suoh, slowly realizes he is genuinely in love with her, though his own familial trauma and density delay his confession. The story progresses beyond the episodic comedy into deep emotional territory as Haruhi helps Tamaki reconcile with his estranged family. In the definitive manga conclusion, they finally confess their mutual feelings, officially start dating, study abroad in Boston together, and eventually get happily married.",
-        "img": "/static/Ouran High School Host Club"
+        "img": "/static/Ouran High School Host Club.jpeg"
     },
     {
         "title": "The World is Still Beautiful",
-        "genre": ["fantasy", "romance", "comedy"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "comedy"
+        ],
         "rating": "7.53/10",
         "audio": "Japanese/English",
         "desc": "A rain-summoning princess marries a young, tyrannical sun king, transforming his cruel worldview into one of compassion and securing a deeply affectionate, lifelong marriage.",
         "wiki": "Nike Lemercier travels to the Sun Kingdom to marry King Livius. Despite his cruel reputation and their initial clashes, Nike's kindness and magical songs teach Livius how to appreciate the beauty of the world. Through surviving political assassination attempts and navigating the complexities of ruling, Livius grows into a benevolent king who is fiercely protective of Nike. The series cements a definitive happy ending, showing their unbreakable trust and deep, passionate love for one another as husband and wife.",
-        "img": "/static/The World is Still Beautiful"
+        "img": "/static/The World is Still Beautiful.jpeg"
     },
     {
         "title": "Kakuriyo: Bed & Breakfast for Spirits",
-        "genre": ["fantasy", "romance", "slice of life"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.46/10",
         "audio": "Japanese/English",
         "desc": "A girl taken to the spirit realm refuses an arranged marriage, instead opening an eatery that slowly wins over the realm's inhabitants and ultimately leads her to genuinely fall for her ogre fiancé.",
         "wiki": "Aoi Tsubaki is spirited away to the Hidden Realm to marry the Odanna (an ogre god) to pay off her grandfather's massive debt. Refusing the marriage, she opens an eatery at his inn. Through her incredible cooking, she heals the hearts of the Ayakashi and resolves deep-seated realm conflicts. As the Odanna constantly protects and supports her, Aoi realizes he was the mysterious Ayakashi who saved her life when she was a starving child. She eventually falls deeply in love with him, willingly choosing to stay by his side for a happy future together.",
-        "img": "/static/Kakuriyo: Bed & Breakfast for Spirits"
+        "img": "/static/Kakuriyo: Bed & Breakfast for Spirits.jpeg"
     },
     {
         "title": "Say 'I Love You'",
-        "genre": ["drama", "romance", "school"],
+        "genre": [
+            "drama",
+            "romance",
+            "school"
+        ],
         "rating": "7.45/10",
         "audio": "Japanese/English",
         "desc": "A quiet, cynical girl catches the interest of the most popular boy in school, slowly healing from past betrayals to build a devoted, trusting relationship that lasts a lifetime.",
         "wiki": "Mei Tachibana has isolated herself due to severe childhood bullying and betrayals. When Yamato Kurosawa takes an interest in her, he patiently helps her learn to trust and love others. They start dating early on, but the story focuses on them navigating realistic relationship hurdles like jealousy, malicious rumors, and communication issues. They overcome every obstacle, reinforcing their bond. The manga provides a highly satisfying conclusion where they stay together through adulthood, get married, and happily raise a child.",
-        "img": "/static/Say 'I Love You'"
+        "img": "/static/Say 'I Love You'.jpeg"
     },
     {
         "title": "My Little Monster",
-        "genre": ["comedy", "romance", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school"
+        ],
         "rating": "7.46/10",
         "audio": "Japanese/English",
         "desc": "An emotionless top student and a violent but innocent delinquent balance each other's extremes, learning to navigate society and their own hearts to secure a happy marriage.",
         "wiki": "Shizuku Mizutani only cares about her grades until she is tasked with delivering handouts to Haru Yoshida, a suspended delinquent. Haru immediately attaches himself to her like a lost puppy. Their strange push-and-pull dynamic forces Shizuku to acknowledge her emotions and Haru to channel his chaotic energy into something productive. Over time, they realize they cannot live without each other's grounding influence. The story concludes with a definitive happy ending, flashing forward to show their beautiful wedding ceremony.",
-        "img": "/static/My Little Monster"
+        "img": "/static/My Little Monster.jpeg"
     },
     {
         "title": "The Duke of Death and His Maid",
-        "genre": ["comedy", "drama", "romance", "supernatural"],
+        "genre": [
+            "comedy",
+            "drama",
+            "romance",
+            "supernatural"
+        ],
         "rating": "7.39/10",
         "audio": "Japanese/English",
         "desc": "A cursed duke whose touch kills everything searches for a cure so he can finally embrace his relentlessly teasing, deeply loyal maid, culminating in a triumphant and emotional marriage.",
         "wiki": "The Duke is exiled by his family to a lonely mansion with only his loyal maid, Alice. Despite his deadly curse, Alice constantly flirts with him, demonstrating her unwavering devotion. Together, they unravel the mystery of the witch Sade who cursed him. After an intense emotional and magical journey, they successfully break the curse. The series ends on an incredibly satisfying and happy note, with the Duke finally able to touch Alice without harming her, leading to their joyous wedding.",
-        "img": "/static/The Duke of Death and His Maid"
+        "img": "/static/The Duke of Death and His Maid.jpeg"
     },
     {
         "title": "Dusk Maiden of Amnesia",
-        "genre": ["mystery", "romance", "supernatural"],
+        "genre": [
+            "mystery",
+            "romance",
+            "supernatural"
+        ],
         "rating": "7.84/10",
         "audio": "Japanese/English",
         "desc": "A boy investigates school mysteries with the ghost of an amnesiac girl, uncovering her tragic past to help her find peace while proving their love can transcend death itself.",
         "wiki": "Teiichi Niiya meets the ghost Yuuko Kanoe and forms a paranormal club to solve her murder. He discovers that Yuuko split her soul, casting away all her painful memories into a dark 'Shadow Yuuko'. Teiichi's unconditional love gives Yuuko the strength to accept her dark half and her tragic past. While it seems she will pass on in a heartbreaking final goodbye, the story pulls a heartwarming twist: because she finally let go of her regrets but still deeply desired to stay with Teiichi, she returns as a peaceful spirit, happily remaining by his side.",
-        "img": "/static/Dusk Maiden of Amnesia"
+        "img": "/static/Dusk Maiden of Amnesia.jpeg"
     },
     {
         "title": "My Love Story with Yamada-kun at Lv999",
-        "genre": ["comedy", "romance"],
+        "genre": [
+            "comedy",
+            "romance"
+        ],
         "rating": "7.77/10",
         "audio": "Japanese/English",
         "desc": "A heartbroken college student meets a socially awkward pro gamer through an MMO, gradually forming an incredibly healthy, affectionate, and official real-life relationship.",
         "wiki": "Akane Kinoshita is dumped by her boyfriend and logs into her MMO to vent, where she meets her aloof guildmate, Akito Yamada. Despite his emotionless exterior in real life, Yamada proves to be incredibly observant and protective. He becomes Akane's comforting presence, helping her move on from her ex. Yamada eventually realizes his own romantic feelings and delivers a remarkably smooth and direct confession. They officially become a couple, and the story continues to showcase their incredibly healthy, sweet, and drama-free dating life.",
-        "img": "/static/My Love Story with Yamada-kun at Lv999"
+        "img": "/static/My Love Story with Yamada-kun at Lv999.jpeg"
     },
     {
         "title": "The Ice Guy and His Cool Female Colleague",
-        "genre": ["comedy", "romance", "fantasy"],
+        "genre": [
+            "comedy",
+            "romance",
+            "fantasy"
+        ],
         "rating": "7.36/10",
         "audio": "Japanese/English",
         "desc": "A descendant of a snow spirit has a massive crush on his kind coworker, creating a cozy office romance that effortlessly transitions from mutual pining to an official relationship.",
         "wiki": "Himuro literally freezes his surroundings or summons snowmen when he gets emotional, which happens constantly because he is entirely smitten with his cool-headed coworker, Fuyutsuki. Instead of finding his powers weird, Fuyutsuki provides him with warmth and constant support. The series is a fluffy, stress-free adult romance that avoids heavy drama. They naturally grow closer through office trips and daily interactions, eventually confessing their mutual feelings and establishing a sweet, official romantic relationship with a guaranteed happy trajectory.",
-        "img": "/static/The Ice Guy and His Cool Female Colleague"
+        "img": "/static/The Ice Guy and His Cool Female Colleague.jpeg"
     },
     {
         "title": "A Galaxy Next Door",
-        "genre": ["comedy", "romance", "supernatural"],
+        "genre": [
+            "comedy",
+            "romance",
+            "supernatural"
+        ],
         "rating": "7.23/10",
         "audio": "Japanese/English",
         "desc": "A struggling manga artist accidentally gets engaged to an alien princess, choosing to nullify their magical pact so they can build a genuine, lasting marriage based purely on love.",
         "wiki": "Ichiro Kuga hires a new assistant, Shiori Goshiki, who turns out to be an alien princess. Due to a magical accident with her thorn, they form a pact that forces them to share pain and essentially binds them together. However, instead of relying on the forced pact, they actively work to build a genuine relationship. After navigating Shiori's overprotective royal family and successfully nullifying the magical contract, they choose to stay together by their own free will. The story concludes with a wonderfully wholesome happy ending, showing their official wedding.",
-        "img": "/static/A Galaxy Next Door"
+        "img": "/static/A Galaxy Next Door.jpeg"
     },
     {
         "title": "Taisho Otome Fairy Tale",
-        "genre": ["historical", "romance", "slice of life"],
+        "genre": [
+            "historical",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.82/10",
         "audio": "Japanese/English",
         "desc": "A disabled, exiled heir is sent a cheerful young bride who brings warmth into his bleak existence, resulting in an unbreakable bond that survives a historical disaster.",
         "wiki": "Tamahiko Shima is cast away to the mountains by his wealthy, abusive family after an accident leaves him with a disabled right arm. His arranged bride, Yuzuki, arrives and relentlessly brings warmth, optimism, and unconditional love back into his life, completely curing his deep depression. During the devastating 1923 Great Kanto Earthquake, Tamahiko overcomes his trauma and hikes all the way to Tokyo to save Yuzuki. They survive the tragedy, formally cut ties with his toxic family, and achieve a beautifully triumphant happy ending as husband and wife.",
-        "img": "/static/Taisho Otome Fairy Tale"
+        "img": "/static/Taisho Otome Fairy Tale.jpeg"
     },
     {
         "title": "Tomo-chan is a Girl!",
-        "genre": ["comedy", "romance", "slice of life", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life",
+            "school"
+        ],
         "rating": "7.79/10",
         "audio": "Japanese/English",
         "desc": "A tomboy tries desperately to get her dense childhood friend to see her as a woman, eventually succeeding in breaking his denial for a deeply satisfying mutual confession.",
         "wiki": "Tomo Aizawa confesses her love to Junichiro, but he is so used to treating her as his best 'bro' that he completely misinterprets it. As Tomo tries various comedic ways to show her feminine charm, it is revealed that Junichiro has actually been in love with her for a long time, but was terrified that dating would ruin their friendship. After a period of intense awkwardness and character growth, Junichiro finally proves his resolve by defeating Tomo's intimidating father in a judo match to win his blessing, resulting in them happily becoming an official couple.",
-        "img": "/static/Tomo-chan is a Girl!"
+        "img": "/static/Tomo-chan is a Girl!.jpeg"
     },
     {
         "title": "My Dress-Up Darling",
-        "genre": ["comedy", "romance", "slice of life"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "8.25/10",
         "audio": "Japanese/English",
         "desc": "A timid doll-maker helps a popular gyaru create cosplay outfits, sparking a shared passion that rapidly evolves into deep mutual respect and a practically guaranteed romantic future.",
         "wiki": "Wakana Gojo, a lonely boy training to be a traditional Hina doll craftsman, is roped into making cosplays for the enthusiastic and beautiful Marin Kitagawa. Rather than mocking his hobby, Marin fiercely defends his talent. Through long nights of sewing, measuring, and attending conventions, Marin develops a massive, undeniable crush on Gojo. While Gojo is slower to realize his own feelings due to low self-esteem, his confidence skyrockets thanks to her support. The series consistently points toward a joyous, happy ending, focusing on their incredibly intimate, highly communicative, and supportive partnership.",
-        "img": "/static/My Dress-Up Darling"
+        "img": "/static/My Dress-Up Darling.jpeg"
     },
     {
         "title": "Hokkaido Gals Are Super Adorable!",
-        "genre": ["comedy", "romance"],
+        "genre": [
+            "comedy",
+            "romance"
+        ],
         "rating": "7.10/10",
         "audio": "Japanese/English",
         "desc": "A city boy moves to freezing Hokkaido and meets a friendly local gal who helps him adapt, leading to a fiercely loyal romance where he chooses her above all others.",
         "wiki": "Tsubasa Shiki moves from Tokyo to the snowy north and meets Minami Fuyuki. Her bold, sweet personality and endless knowledge of Hokkaido help him adjust to his new life. While the story introduces other girls who develop feelings for Tsubasa, he remains entirely devoted to Minami. They overcome misunderstandings, parental expectations, and their own insecurities. The series rewards viewers with a definitive happy ending, as Tsubasa directly rejects the other love interests to officially confess his love to Minami, and they happily start dating.",
-        "img": "/static/Hokkaido Gals Are Super Adorable!"
+        "img": "/static/Hokkaido Gals Are Super Adorable!.jpeg"
     },
     {
         "title": "The Girl I Like Forgot Her Glasses",
-        "genre": ["comedy", "romance", "slice of life", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life",
+            "school"
+        ],
         "rating": "7.15/10",
         "audio": "Japanese/English",
         "desc": "A boy eagerly helps his cute desk neighbor who constantly forgets her glasses, evolving from a one-sided crush into an incredibly wholesome, official middle-school romance.",
         "wiki": "Kaede Komura is thrilled when his crush, Ai Mie, constantly forgets or breaks her glasses, as her poor eyesight forces her to get incredibly close to his face and rely on his help throughout the school day. Over time, Mie realizes that she has fallen deeply in love with Kaede, not just because he helps her see, but because of his unwavering kindness. The story builds beautifully to their middle-school graduation, culminating in a heartwarming mutual confession where they officially become a sweet, happy couple.",
-        "img": "/static/The Girl I Like Forgot Her Glasses"
+        "img": "/static/The Girl I Like Forgot Her Glasses.jpeg"
     },
     {
         "title": "Saint Cecilia and Pastor Lawrence",
-        "genre": ["comedy", "romance", "fantasy"],
+        "genre": [
+            "comedy",
+            "romance",
+            "fantasy"
+        ],
         "rating": "7.63/10",
         "audio": "Japanese/English",
         "desc": "A lazy saint and a dense pastor live peacefully in a small town, sharing a cozy, stress-free dynamic that slowly but surely marches toward a loving, happy future.",
         "wiki": "Cecilia is a revered, elegant Saint to the townspeople, but she acts incredibly lazy and spoiled around Pastor Lawrence. She has a massive, obvious crush on him, but Lawrence remains hilariously oblivious to her romantic advances, treating her with pure reverence. Despite his density, Lawrence constantly goes out of his way to protect and pamper her. The series is the epitome of pure fluff, completely devoid of toxic drama or heartbreak, assuring a slow-burn but undeniably happy romantic ending as Lawrence slowly wakes up to the depth of his own feelings for her.",
-        "img": "/static/Saint Cecilia and Pastor Lawrence"
+        "img": "/static/Saint Cecilia and Pastor Lawrence.jpeg"
     },
     {
         "title": "Chobits",
-        "genre": ["comedy", "drama", "romance", "sci-fi"],
+        "genre": [
+            "comedy",
+            "drama",
+            "romance",
+            "sci-fi"
+        ],
         "rating": "7.40/10",
         "audio": "Japanese/English",
         "desc": "A student finds an abandoned personal computer girl, ultimately falling in love and proving their bond transcends her programming for a happy future together.",
@@ -559,7 +816,11 @@
     },
     {
         "title": "Ah! My Goddess",
-        "genre": ["comedy", "romance", "fantasy"],
+        "genre": [
+            "comedy",
+            "romance",
+            "fantasy"
+        ],
         "rating": "7.33/10",
         "audio": "Japanese/English",
         "desc": "A college student's wish binds a goddess to him forever, leading to a perfectly wholesome and enduring supernatural romance that eventually results in a formal celestial marriage.",
@@ -568,7 +829,12 @@
     },
     {
         "title": "Waiting in the Summer",
-        "genre": ["comedy", "drama", "romance", "sci-fi"],
+        "genre": [
+            "comedy",
+            "drama",
+            "romance",
+            "sci-fi"
+        ],
         "rating": "7.47/10",
         "audio": "Japanese/English",
         "desc": "A group of friends makes a movie during a complicated summer of love triangles, resulting in a boy and an alien girl falling deeply in love and reuniting against all odds.",
@@ -577,7 +843,10 @@
     },
     {
         "title": "Mayo Chiki!",
-        "genre": ["comedy", "romance"],
+        "genre": [
+            "comedy",
+            "romance"
+        ],
         "rating": "7.27/10",
         "audio": "Japanese/English",
         "desc": "A boy with a phobia of women discovers a popular butler is actually a girl, leading to a secret-sharing partnership that cures his fears and blossoms into an official romance.",
@@ -586,7 +855,11 @@
     },
     {
         "title": "My Bride is a Mermaid",
-        "genre": ["comedy", "romance", "fantasy"],
+        "genre": [
+            "comedy",
+            "romance",
+            "fantasy"
+        ],
         "rating": "7.85/10",
         "audio": "Japanese/English",
         "desc": "A boy forced to marry a mermaid to survive her yakuza family's wrath genuinely falls in love with her, fiercely protecting his new wife in a chaotic but incredibly loyal relationship.",
@@ -595,7 +868,11 @@
     },
     {
         "title": "Nodame Cantabile",
-        "genre": ["comedy", "music", "romance"],
+        "genre": [
+            "comedy",
+            "music",
+            "romance"
+        ],
         "rating": "8.25/10",
         "audio": "Japanese/English",
         "desc": "An elite musician and an eccentric but brilliant pianist push each other to the pinnacle of the classical music world, harmonizing their careers and their romantic lives in Europe.",
@@ -604,7 +881,11 @@
     },
     {
         "title": "Love, Chunibyo & Other Delusions!",
-        "genre": ["comedy", "romance", "slice of life"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.71/10",
         "audio": "Japanese/English",
         "desc": "A boy trying to escape his embarrassing past is drawn into a delusional girl's fantasy world, realizing he loves her exactly as she is and forming a wonderfully sweet, lifelong bond.",
@@ -613,7 +894,12 @@
     },
     {
         "title": "Kodocha",
-        "genre": ["comedy", "drama", "romance", "school"],
+        "genre": [
+            "comedy",
+            "drama",
+            "romance",
+            "school"
+        ],
         "rating": "7.94/10",
         "audio": "Japanese/English",
         "desc": "A child actress and a troubled delinquent clash but soon become each other's greatest support systems, navigating heavy emotional trauma to secure a loving relationship as young adults.",
@@ -622,7 +908,12 @@
     },
     {
         "title": "Marmalade Boy",
-        "genre": ["comedy", "drama", "romance", "school"],
+        "genre": [
+            "comedy",
+            "drama",
+            "romance",
+            "school"
+        ],
         "rating": "7.52/10",
         "audio": "Japanese",
         "desc": "A girl navigates an incredibly complicated living situation after her parents swap spouses, ultimately fighting against all odds to secure a happy marriage with her new stepbrother.",
@@ -631,7 +922,11 @@
     },
     {
         "title": "Engaged to the Unidentified",
-        "genre": ["comedy", "romance", "slice of life"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.39/10",
         "audio": "Japanese/English",
         "desc": "A girl discovers she is arranged to marry a quiet boy, leading to genuine affection as they uncover shared supernatural childhood secrets and happily choose each other.",
@@ -640,7 +935,11 @@
     },
     {
         "title": "Tsuredure Children",
-        "genre": ["comedy", "romance", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school"
+        ],
         "rating": "7.63/10",
         "audio": "Japanese/English",
         "desc": "A collection of interconnected short stories where various high schoolers successfully navigate the awkwardness of first love to form incredibly sweet, official relationships.",
@@ -649,7 +948,11 @@
     },
     {
         "title": "In/Spectre",
-        "genre": ["mystery", "romance", "supernatural"],
+        "genre": [
+            "mystery",
+            "romance",
+            "supernatural"
+        ],
         "rating": "6.92/10",
         "audio": "Japanese/English",
         "desc": "The Goddess of Wisdom for spirits and her immortal, future-seeing boyfriend solve supernatural mysteries while maintaining an unshakeable and devoted romantic relationship.",
@@ -658,7 +961,11 @@
     },
     {
         "title": "Your Name.",
-        "genre": ["drama", "romance", "supernatural"],
+        "genre": [
+            "drama",
+            "romance",
+            "supernatural"
+        ],
         "rating": "8.84/10",
         "audio": "Japanese/English",
         "desc": "Two teenagers swap bodies across time and space, battling fate to avert a disaster and ultimately reuniting years later for a highly emotional, happy ending.",
@@ -667,7 +974,11 @@
     },
     {
         "title": "Weathering with You",
-        "genre": ["drama", "fantasy", "romance"],
+        "genre": [
+            "drama",
+            "fantasy",
+            "romance"
+        ],
         "rating": "8.28/10",
         "audio": "Japanese/English",
         "desc": "A runaway boy meets a girl who can clear the rainy skies, ultimately choosing to sacrifice the world's weather to save her life and secure their happy future together.",
@@ -676,7 +987,11 @@
     },
     {
         "title": "Josee, the Tiger and the Fish",
-        "genre": ["drama", "romance", "slice of life"],
+        "genre": [
+            "drama",
+            "romance",
+            "slice of life"
+        ],
         "rating": "8.41/10",
         "audio": "Japanese/English",
         "desc": "A college student and a fiercely independent paraplegic artist overcome devastating physical and emotional hurdles to support each other's dreams and secure a happy romance.",
@@ -685,7 +1000,10 @@
     },
     {
         "title": "Words Bubble Up Like Soda Pop",
-        "genre": ["romance", "slice of life"],
+        "genre": [
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.35/10",
         "audio": "Japanese/English",
         "desc": "A boy who speaks through haiku and a self-conscious girl bond over a lost record, culminating in a beautiful, public confession and a sweet, happy romance.",
@@ -694,7 +1012,12 @@
     },
     {
         "title": "Whisper of the Heart",
-        "genre": ["drama", "romance", "slice of life", "school"],
+        "genre": [
+            "drama",
+            "romance",
+            "slice of life",
+            "school"
+        ],
         "rating": "8.21/10",
         "audio": "Japanese/English",
         "desc": "Two ambitious teenagers inspire each other to pursue their artistic dreams, leading to a surprisingly mature commitment and a joyous promise of marriage.",
@@ -703,7 +1026,11 @@
     },
     {
         "title": "Howl's Moving Castle",
-        "genre": ["adventure", "fantasy", "romance"],
+        "genre": [
+            "adventure",
+            "fantasy",
+            "romance"
+        ],
         "rating": "8.65/10",
         "audio": "Japanese/English",
         "desc": "A young woman cursed to look old and a flawed, vain wizard save each other from war and dark magic, breaking their curses to live happily together.",
@@ -712,88 +1039,130 @@
     },
     {
         "title": "Ponyo",
-        "genre": ["adventure", "fantasy", "romance"],
+        "genre": [
+            "adventure",
+            "fantasy",
+            "romance"
+        ],
         "rating": "7.94/10",
         "audio": "Japanese/English",
         "desc": "A magical goldfish princess gives up her powers to become a human girl and live happily forever with the young boy who loves her unconditionally.",
         "wiki": "Ponyo, a magical fish, escapes the ocean and befriends a young boy named Sosuke. She uses powerful magic to become human, but this creates a massive imbalance in nature, plunging the world into a massive flood. To restore the balance and allow Ponyo to stay human permanently, Sosuke must pass a test set by Ponyo's mother, the Goddess of Mercy. He must prove that his love is pure and that he accepts Ponyo whether she is a fish, a mermaid, or a human. He passes without hesitation. They share a sweet kiss, and Ponyo loses her magic to happily become a normal human girl.",
         "img": "/static/Ponyo.jpeg"
     },
-{
+    {
         "title": "From Up on Poppy Hill",
-        "genre": ["drama", "historical", "romance"],
+        "genre": [
+            "drama",
+            "historical",
+            "romance"
+        ],
         "rating": "7.83/10",
         "audio": "Japanese/English",
         "desc": "Two students trying to save their school's clubhouse uncover a shocking shared past, ultimately proving their love and securing a happy future together.",
         "wiki": "Umi and Shun work together to preserve the Latin Quarter clubhouse and quickly fall in love. However, their romance halts when they discover a photograph suggesting they might share the same biological father. Heartbroken but determined, they investigate their parents' pasts. They eventually learn that Shun's biological father registered Shun under his own name to protect him before giving him to his current adoptive father, meaning Umi and Shun are not blood-related. Relieved, they confess their love and stay together happily.",
-        "img": "/static/From Up on Poppy Hill"
+        "img": "/static/From Up on Poppy Hill.jpeg"
     },
     {
         "title": "Emma: A Victorian Romance",
-        "genre": ["historical", "romance", "drama"],
+        "genre": [
+            "historical",
+            "romance",
+            "drama"
+        ],
         "rating": "7.63/10",
         "audio": "Japanese/English",
         "desc": "A wealthy gentleman and a hardworking maid fight against strict Victorian class divisions, successfully overcoming societal prejudice to secure a happy marriage.",
         "wiki": "William Jones, an aristocratic gentleman, falls deeply in love with a quiet maid named Emma. Their relationship faces severe pushback from William's wealthy family and the rigid class structures of Victorian London. Under immense pressure, Emma runs away to the countryside to spare William from scandal. Refusing to give up, William tracks her down, formally abandons his high-society engagement to another woman, and proves his absolute devotion. The series concludes with a beautiful, definitive happy ending as the two finally get married.",
-        "img": "/static/Emma: A Victorian Romance"
+        "img": "/static/Emma: A Victorian Romance.jpeg"
     },
     {
         "title": "Amagami SS",
-        "genre": ["comedy", "romance", "school", "slice of life"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school",
+            "slice of life"
+        ],
         "rating": "7.29/10",
         "audio": "Japanese/English",
         "desc": "A boy experiences different romantic outcomes with six different girls through an omnibus format, guaranteeing a unique, deeply satisfying happy ending for each heroine.",
         "wiki": "Junichi Tachibana is afraid of rejection due to a past heartbreak on Christmas Eve. The anime brilliantly uses an omnibus format, resetting the timeline every four episodes. This allows Junichi to successfully romance six different heroines (Haruka, Kaoru, Sae, Ai, Rihoko, and Tsukasa) in completely separate universes. Each girl's arc bypasses harem drama and concludes with a definitive, highly satisfying romantic milestone, such as a flash-forward to their wedding, living together, or an official commitment.",
-        "img": "/static/Amagami SS"
+        "img": "/static/Amagami SS.jpeg"
     },
     {
         "title": "Seiren",
-        "genre": ["comedy", "romance", "school", "drama"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school",
+            "drama"
+        ],
         "rating": "6.33/10",
         "audio": "Japanese/English",
         "desc": "A high schooler navigates the anxieties of growing up while successfully romancing three different girls in alternate timelines, each culminating in a sweet, definitive conclusion.",
         "wiki": "Set in the same universe as Amagami SS, Shoichi Kamita helps three different girls—Hikari, Toru, and Kyouko—with their personal anxieties regarding their futures. Continuing the successful omnibus format of its predecessor, the show resets the timeline for each girl. This structure guarantees that Shoichi achieves a highly satisfying, drama-free happy ending with each heroine in her respective arc, often showing glimpses of their successful futures as couples.",
-        "img": "/static/Seiren"
+        "img": "/static/Seiren.jpeg"
     },
     {
         "title": "Photokano",
-        "genre": ["comedy", "romance", "school", "Seinen", "Ecchi"],
+        "genre": [
+            "comedy",
+            "romance",
+            "school",
+            "Seinen",
+            "Ecchi"
+        ],
         "rating": "6.39/10",
         "audio": "Japanese",
         "desc": "A boy uses his new passion for photography to connect with the girls at his school, experiencing successful, happy romantic relationships across multiple alternate timelines.",
         "wiki": "Kazuya Maeda joins the photography club and begins taking pictures of various girls around his school. Utilizing an omnibus format similar to Amagami SS, the story explores completely separate, parallel routes. In each dedicated timeline, Kazuya uses his photography to help a specific girl overcome her personal insecurities or family issues. Every single route culminates in a mutual confession and a definitively happy romantic ending for that respective couple.",
-        "img": "/static/Photokano"
+        "img": "/static/Photokano.jpeg"
     },
     {
         "title": "Hatsukoi Limited",
-        "genre": ["comedy", "romance"],
+        "genre": [
+            "comedy",
+            "romance"
+        ],
         "rating": "7.22/10",
         "audio": "Japanese",
         "desc": "An interconnected web of middle and high school girls experience the intense trials of first love, successfully navigating crushes to form incredibly sweet, official relationships.",
         "wiki": "The series weaves together the romantic lives and first crushes of multiple students, focusing on the awkwardness and emotional intensity of adolescence. Unlike many shows that leave love polygons unresolved, this series actively works to untangle its web of relationships. It provides highly satisfying resolutions by the finale, pairing off the main cast into happy, committed couples as they finally learn to communicate their true, unfiltered feelings to one another.",
-        "img": "/static/Hatsukoi Limited"
+        "img": "/static/Hatsukoi Limited.jpeg"
     },
     {
         "title": "True Tears",
-        "genre": ["drama", "romance"],
+        "genre": [
+            "drama",
+            "romance"
+        ],
         "rating": "7.30/10",
         "audio": "Japanese",
         "desc": "A boy caught in a complex love triangle must confront his true feelings, ultimately making a decisive choice that leads to emotional growth and a definitive romantic resolution.",
         "wiki": "Shinichiro lives with his long-time childhood crush, Hiromi, who acts cold to hide her true feelings from his strict mother. Concurrently, he bonds with the eccentric Noe, who helps him tap into his artistic passions. After a deeply emotional and dramatic journey where everyone is forced to mature and confront their insecurities, Shinichiro makes a firm decision. He ultimately chooses Hiromi. They reconcile, confess their love, and secure a happy ending together, while Noe moves forward with a renewed spirit.",
-        "img": "/static/True Tears"
+        "img": "/static/True Tears.jpeg"
     },
     {
         "title": "Mashiroiro Symphony: The Color of Lovers",
-        "genre": ["comedy", "drama", "romance"],
+        "genre": [
+            "comedy",
+            "drama",
+            "romance"
+        ],
         "rating": "6.91/10",
         "audio": "Japanese",
         "desc": "A boy transfers to a prestigious all-girls school, breaking down prejudices and ultimately choosing a loving, happy relationship with a gentle upperclassman.",
         "wiki": "Shingo Uryuu joins the Nuko (cat) Club during an integration experiment at an elite all-girls academy. While initially presenting a standard harem dynamic, the anime takes a decisive and refreshing route. Shingo falls deeply in love with the gentle, animal-loving upperclassman, Miu Amaha. They successfully navigate the ensuing jealousy and heartbreak of the other girls, fully committing to each other and securing a highly satisfying, definitive happy ending as an official couple.",
-        "img": "/static/Mashiroiro Symphony: The Color of Lovers"
+        "img": "/static/Mashiroiro Symphony: The Color of Lovers.jpeg"
     },
     {
         "title": "Hoshizora e Kakaru Hashi",
-        "genre": ["comedy", "romance", "harem"],
+        "genre": [
+            "comedy",
+            "romance",
+            "harem"
+        ],
         "rating": "6.72/10",
         "audio": "Japanese",
         "desc": "A boy moves to the countryside and accidentally sparks a romance, ultimately choosing the cheerful local girl for a heartwarming and definitive happy ending.",
@@ -801,65 +1170,95 @@
     },
     {
         "title": "Da Capo",
-        "genre": ["drama", "romance", "fantasy"],
+        "genre": [
+            "drama",
+            "romance",
+            "fantasy"
+        ],
         "rating": "6.83/10",
         "audio": "Japanese/English",
         "desc": "A boy navigates a magical island and a complex web of romances, eventually breaking a wish-granting tree's power to secure a genuine, happily-ever-after with his true love.",
         "wiki": "Jun'ichi Asakura lives on Hatsune Island, where cherry blossoms bloom year-round due to a magical, wish-granting tree. While multiple girls vie for his affection, the story centers on his deep, evolving bond with his adopted sister, Nemu. The magical tree's wish-granting eventually goes awry, causing Nemu to fall deathly ill. Jun'ichi sacrifices the tree's magic to save her, ending the endless blossoms but securing a beautiful, definitive happy ending where he and Nemu officially marry.",
-        "img": "/static/Da Capo"
+        "img": "/static/Da Capo.jpeg"
     },
     {
         "title": "Please Teacher!",
-        "genre": ["comedy", "romance", "sci-fi", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "sci-fi",
+            "school"
+        ],
         "rating": "7.02/10",
         "audio": "Japanese/English",
         "desc": "A boy with a rare condition secretly marries his alien homeroom teacher to protect her identity, turning a marriage of convenience into a profound, lifelong romance.",
         "wiki": "Kei Kusanagi suffers from a 'standstill' illness that halts his aging during severe emotional distress. He accidentally discovers his teacher, Mizuho, is an alien. To prevent her from being deported, they get legally married. Despite the secrecy and age gap, they fall genuinely and deeply in love. When Kei's illness relapses and threatens to plunge him into a coma and erase his memories, Mizuho's unwavering devotion pulls him through. The series culminates in a triumphant happy ending where they overcome his illness and remain happily married.",
-        "img": "/static/Please Teacher!"
+        "img": "/static/Please Teacher!.jpeg"
     },
     {
         "title": "ReLIFE",
-        "genre": ["romance", "drama", "slice of life"],
+        "genre": [
+            "romance",
+            "drama",
+            "slice of life"
+        ],
         "rating": "8.1/10",
         "audio": "Eng / Jap",
         "desc": "A man relives his final year of high school to fix his life, falling deeply in love and miraculously reuniting with his romantic partner in adulthood for a perfect happy ending.",
         "wiki": "27-year-old Arata Kaizaki takes an experimental pill to look 17 and redo one year of high school to fix his regrets. He falls in love with the socially awkward Chizuru Hishiro. In a massive plot twist, it is revealed that Chizuru is actually another adult ReLIFE test subject. They confess their feelings, but their memories of each other are erased when the experiment ends. However, the story delivers an incredibly satisfying happy ending: they meet as adults at their new workplace, their memories are miraculously triggered, and they happily reunite.",
-        "img": "/static/ReLIFE"
+        "img": "/static/Relife.jpeg"
     },
     {
         "title": "Alya Sometimes Hides Her Feelings in Russian",
-        "genre": ["comedy", "romance", "slice of life", "school"],
+        "genre": [
+            "comedy",
+            "romance",
+            "slice of life",
+            "school"
+        ],
         "rating": "7.8/10",
         "audio": "Eng / Jap",
         "desc": "A popular girl flirts with her slacker desk neighbor in Russian, unaware he understands every word, leading to a hilariously sweet dynamic that edges toward genuine romance.",
         "wiki": "Alisa (Alya) is the stunning school idol who frequently mutters affectionate remarks in Russian to Masachika Kuze, thinking he is completely clueless. Masachika, secretly fluent in Russian, must hilariously hide his embarrassment. While the light novels are still ongoing, the narrative consistently points toward a highly satisfying romantic payoff, as Masachika becomes her political partner for the student council election and their mutual feelings continue to grow deeper, more supportive, and undeniable.",
-        "img": "/static/Alya Sometimes Hides Her Feelings in Russian"
+        "img": "/static/Alya Sometimes Hides Her Feelings In Russian.jpeg"
     },
     {
         "title": "Chillin' in Another World with Level 2 Super Cheat Powers",
-        "genre": ["fantasy", "romance", "slice of life"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.3/10",
         "audio": "Eng / Jap",
         "desc": "A discarded merchant gains god-like powers but chooses a peaceful life, marrying a demon wolf and building an incredibly wholesome, drama-free family.",
         "wiki": "Flio is summoned as a hero but discarded. Upon reaching level 2, he unlocks infinite magical power but hides it to avoid the human-demon war. He defeats and subsequently marries Fenrys, a powerful demon wolf. The series completely bypasses typical harem tropes, focusing entirely on Flio and Fenrys's fiercely loyal and highly affectionate married life. They establish a peaceful household, adopt magical companions, and continually guarantee a stress-free, happy ending in every story arc.",
-        "img": "/static/Chillin' in Another World with Level 2 Super Cheat Powers"
+        "img": "/static/Chillin' in Another World.jpeg"
     },
     {
         "title": "An Archdemon's Dilemma: How to Love Your Elf Bride",
-        "genre": ["fantasy", "romance", "slice of life"],
+        "genre": [
+            "fantasy",
+            "romance",
+            "slice of life"
+        ],
         "rating": "7.4/10",
         "audio": "Eng / Jap",
         "desc": "A socially awkward sorcerer rescues a beautiful elf, transforming his dark life into an incredibly sweet, domestic romance where they mutually heal and officially become a loving couple.",
         "wiki": "Zagan, an evil sorcerer terrible at communication, buys the elf slave Nephy at an underground auction solely because he fell in love at first sight. He frees her immediately, and they begin a wholesome cohabitation. Zagan uses his immense power primarily to protect her and provide a comfortable life. They slowly overcome their severe awkwardness and past traumas, explicitly confess their feelings, and share a definitive happy ending as a deeply devoted, official couple.",
-        "img": "/static/An Archdemon's Dilemma: How to Love Your Elf Bride"
+        "img": "/static/An Archdemon's Dilemma_ How to Love Your Elf Bride.jpeg"
     },
     {
         "title": "Endo and Kobayashi Live! The Latest on Tsundere Villainess Lieselotte",
-        "genre": ["comedy", "fantasy", "romance"],
+        "genre": [
+            "comedy",
+            "fantasy",
+            "romance"
+        ],
         "rating": "7.5/10",
         "audio": "Eng / Jap",
         "desc": "Two high schoolers act as gods to guide a dating sim prince, successfully saving the misunderstood villainess from a tragic fate and securing multiple joyous marriages.",
         "wiki": "Aoto Endo and Shihono Kobayashi provide live commentary on an otome game, which Prince Siegwald actually hears as divine guidance. By explaining that his seemingly wicked fiancée Lieselotte is just a tsundere (hiding her massive love for him with harsh words), they completely change the game's tragic narrative. Siegwald aggressively romances Lieselotte, saving her from possession by the Witch of Yore. The story ends incredibly happily, with Siegwald and Lieselotte marrying, and Endo and Kobayashi also confessing their love in the real world.",
-        "img": "/static/Endo and Kobayashi Live! The Latest on Tsundere Villainess Lieselotte"
+        "img": "/static/Endo and Kobayashi Live!.jpeg"
     }
 ]
