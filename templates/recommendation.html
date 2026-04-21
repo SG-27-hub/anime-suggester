@@ -473,11 +473,9 @@
             <img src="/static/logo.png" width="30" alt="logo"> Romance Suggester
         </a>
         <div class="nav-icons">
-    <i class="bi bi-calendar2-date" onclick="openModal('historyModal'); loadHistory();" title="History"></i>
-    
-    <i class="bi bi-send" onclick="openModal('wishlistModal'); loadWishlistModal();" title="Wishlist"></i>
-    
-    <i class="bi bi-person" onclick="window.location.href='/chat'" title="AI Chat"></i>
+    <i class="ri-history-line" onclick="openModal('historyModal'); loadHistory();" title="History"></i>
+    <i class="ri-heart-line" onclick="openModal('wishlistModal'); loadWishlistModal();" title="Wishlist"></i>
+    <i class="ri-robot-2-line" onclick="window.location.href='/chat'" title="AI Chat"></i>
 </div>
     </div>
 
@@ -558,7 +556,7 @@
             </div>
 
             <div class="bottom-nav">
-                <a href="/suggest?mood={{ mood }}"><button class="btn-large btn-try-again">Find Another Anime</button></a>
+                <a href="/suggest?mood={{ mood }}&search="><button class="btn-large btn-try-again">Find Another Anime</button></a>
                 <a href="/?skip_splash=1"><button class="btn-large btn-home">Back to Search</button></a>
             </div>
 
@@ -730,11 +728,11 @@
                         const grid = document.getElementById('similarGrid');
                         similarAnime.forEach(anime => {
                             grid.innerHTML += `
-                                <a href="/suggest?search=${encodeURIComponent(anime.title)}" class="similar-card">
-                                    <img src="${anime.img || '/static/placeholder.png'}" alt="poster">
-                                    <h4>${anime.title}</h4>
-                                </a>
-                            `;
+                              <a href="/suggest?search=${encodeURIComponent(anime.title)}" class="similar-card">
+                              <img src="${anime.img || '/static/placeholder.png'}" alt="poster" loading="lazy">
+                            <h4>${anime.title}</h4>
+                            </a>
+                          `;
                         });
                         document.getElementById('similarSection').style.display = 'block';
                     }
