@@ -4,9 +4,4 @@ sentence-transformers
 scikit-learn
 torch
 google-genai
-flask-limiterFlask
-gunicorn
-sentence-transformers
-scikit-learn
-torch
-google-genai
+flask-limiter
